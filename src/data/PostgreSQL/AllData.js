@@ -1,17 +1,10 @@
-import { postgresIntroData } from './postgresIntroData';
-import { postgresSetupData } from './postgresSetupData';
-import { postgresCrudData } from './postgresCrudData';
-import { postgresRelationsData } from './postgresRelationsData';
+import { postgresBasicsData } from './postgresBasicsData';
 import { postgresAdvancedData } from './postgresAdvancedData';
-import { postgresNodeData } from './postgresNodeData';
-import { postgresPrismaData } from './postgresPrismaData';
+import { postgresConstraintsJoinsData } from './postgresConstraintsJoinsData';
+
 
 export const postgresAllModules = [
-  postgresIntroData,
-  postgresSetupData,
-  postgresCrudData,
-  postgresRelationsData,
+  postgresBasicsData,
   postgresAdvancedData,
-  postgresNodeData,
-  postgresPrismaData,
+  postgresConstraintsJoinsData,
 ];
