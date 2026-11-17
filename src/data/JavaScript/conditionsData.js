@@ -49,6 +49,46 @@ export const conditionsData = {
       code: "let day = 'Monday';\nswitch (day) {\n  case 'Monday':\n    console.log('Dushanba');\n    break;\n  default:\n    console.log('Boshqa kun');\n}"
     },
     {
+      type: 'challenge',
+      lang: 'js',
+      title: 'Mini vazifa: kino chiptasi narxi',
+      story: "Kinoteatr yoshga qarab chipta narxini belgilaydi: 6 yoshgacha — bepul, 6–17 yosh — 20 000 so'm, 18–59 yosh — 35 000 so'm, 60 va undan katta — 15 000 so'm.",
+      task: "chiptaNarxi(yosh) funksiyasini yozing: yoshga qarab to'g'ri narxni qaytarsin.",
+      starter: `function chiptaNarxi(yosh) {
+  // if / else if yordamida yozing
+}
+
+console.log(chiptaNarxi(25));`,
+      tests: [
+        { name: '5 yosh — 0', expr: 'chiptaNarxi(5) === 0' },
+        { name: '10 yosh — 20000', expr: 'chiptaNarxi(10) === 20000' },
+        { name: '30 yosh — 35000', expr: 'chiptaNarxi(30) === 35000' },
+        { name: '65 yosh — 15000', expr: 'chiptaNarxi(65) === 15000' }
+      ],
+      hint: 'Avval yosh < 6 ni tekshiring, keyin yosh < 18, yosh < 60 va oxirida else.',
+      solution: `function chiptaNarxi(yosh) {
+  if (yosh < 6) return 0;
+  else if (yosh < 18) return 20000;
+  else if (yosh < 60) return 35000;
+  else return 15000;
+}`
+    },
+    {
+      type: 'playground',
+      lang: 'js',
+      title: "Tajriba: shartni o'zgartiring",
+      text: "Harorat qiymatini o'zgartirib, qaysi shart ishlashini kuzating.",
+      code: `let harorat = 18;
+
+if (harorat > 30) {
+  console.log("Juda issiq — suv iching 💧");
+} else if (harorat > 15) {
+  console.log("Yoqimli ob-havo 🌤️");
+} else {
+  console.log("Sovuq — iliq kiyining 🧥");
+}`
+    },
+    {
       type: 'tasks',
       title: "7. Amaliyot: Mashqlar",
       tasks: [
