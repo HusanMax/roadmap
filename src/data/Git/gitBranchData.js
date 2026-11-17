@@ -27,7 +27,21 @@ git switch -c feature/cart      # yaratish va o'tish (birga)
 
 git switch main                 # main ga qaytish
 git merge feature/login         # feature/login ni main ga qo'shish
-git branch -d feature/login     # tayyor bo'lgan branch ni o'chirish`
+git branch -d feature/login     # tayyor bo'lgan branch ni o'chirish`,
+      output: `-- git branch
+  feature/login
+* main
+
+Switched to branch 'feature/login'
+Switched to a new branch 'feature/cart'
+Switched to branch 'main'
+
+Updating 3f2a1b9..8e4c7d0
+Fast-forward
+ login.js | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+Deleted branch feature/login (was 8e4c7d0).`
     },
     {
       type: 'visual',

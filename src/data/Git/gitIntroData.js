@@ -34,7 +34,12 @@ export const gitIntroData = {
 git config --global user.name  "Ismingiz"
 git config --global user.email "email@example.com"
 git config --global init.defaultBranch main   # asosiy branch nomi
-git config --list                              # sozlamalarni ko'rish`
+git config --list                              # sozlamalarni ko'rish`,
+      output: `git version 2.43.0
+
+user.name=Ismingiz
+user.email=email@example.com
+init.defaultbranch=main`
     },
     {
       type: 'visual',

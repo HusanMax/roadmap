@@ -23,7 +23,9 @@ export const gitWorkflowData = {
 git tag -a v1.1.0 -m "Yangi dizayn"  # izohli tag
 git tag                              # ro'yxat
 git push origin v1.0.0               # tag ni GitHub ga yuborish
-# GitHub da tag asosida "Release" yaratish mumkin`
+# GitHub da tag asosida "Release" yaratish mumkin`,
+      output: `v1.0.0
+v1.1.0`
     },
     {
       type: 'comparison',

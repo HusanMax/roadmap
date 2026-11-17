@@ -15,7 +15,22 @@ echo "# Mening loyiham" > README.md
 git status                        # README.md "untracked" (kuzatilmagan)
 
 git add README.md                 # staging ga qo'shish
-git commit -m "Birinchi commit: README qo'shildi"`
+git commit -m "Birinchi commit: README qo'shildi"`,
+      output: `Initialized empty Git repository in /home/user/mening-loyiham/.git/
+
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        README.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+[main (root-commit) 3f2a1b9] Birinchi commit: README qo'shildi
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md`
     },
     {
       type: 'code',
@@ -31,7 +46,15 @@ git commit -m "Navbar qo'shildi"
 git commit -am "Tezkor tuzatish"   # kuzatilayotgan fayllarni add siz commit (yangi fayllarsiz)
 
 git log                     # commit tarixi
-git log --oneline --graph   # qisqa va grafik ko'rinishda`
+git log --oneline --graph   # qisqa va grafik ko'rinishda`,
+      output: `-- git status
+On branch main
+Changes not staged for commit:
+        modified:   src/App.jsx
+
+-- git log --oneline --graph
+* 7c1d4e2 Navbar qo'shildi
+* 3f2a1b9 Birinchi commit: README qo'shildi`
     },
     {
       type: 'comparison',

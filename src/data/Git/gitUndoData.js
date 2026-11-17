@@ -59,7 +59,11 @@ git reset --hard HEAD~1`
 git switch main            # boshqa ishni qiling
 git switch feature/x
 git stash pop              # yashirilganni qaytarish
-git stash list`
+git stash list`,
+      output: `Saved working directory and index state WIP on feature/x: 7c1d4e2 Navbar qo'shildi
+Switched to branch 'main'
+Switched to branch 'feature/x'
+stash@{0}: WIP on feature/x: 7c1d4e2 Navbar qo'shildi`
     },
     {
       type: 'rule',

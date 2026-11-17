@@ -26,7 +26,13 @@ git push -u origin main        # birinchi marta yuborish (-u — keyingi safar f
 # Keyingi o'zgarishlar
 git add .
 git commit -m "Yangi bo'lim qo'shildi"
-git push`
+git push`,
+      output: `origin  https://github.com/foydalanuvchi/loyiha.git (fetch)
+origin  https://github.com/foydalanuvchi/loyiha.git (push)
+
+branch 'main' set up to track 'origin/main'.
+To https://github.com/foydalanuvchi/loyiha.git
+ * [new branch]      main -> main`
     },
     {
       type: 'code',
@@ -36,7 +42,12 @@ git push`
 cd loyiha
 
 git fetch                      # yangiliklarni yuklab oladi, lekin birlashtirmaydi
-git pull                       # fetch + merge: yangiliklarni olib, joriy branchga qo'shadi`
+git pull                       # fetch + merge: yangiliklarni olib, joriy branchga qo'shadi`,
+      output: `Cloning into 'loyiha'...
+remote: Enumerating objects: 24, done.
+Receiving objects: 100% (24/24), done.
+
+Already up to date.`
     },
     {
       type: 'comparison',
