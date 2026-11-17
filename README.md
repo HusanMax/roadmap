@@ -40,6 +40,14 @@ Har bir `data/<Yo'nalish>/` papkasida `AllData.js` bor — u shu yo'nalishdagi b
 
 ## O'zgarishlar tarixi
 
+### 2026-11-17 (kod natijasi)
+- **Qo'shildi:** misol kodlar ostida "▶ Natija" paneli (`CodeOutput.jsx`):
+  - **JavaScript** — kod izolyatsiyalangan (sandbox) oynada haqiqatan ishga tushiriladi va `console.log` natijasi ko'rsatiladi; `console.log` bo'lmasa o'zgaruvchilarning qiymati chiqadi. Qayta ishga tushirish tugmasi bor.
+  - **HTML** — kod brauzerda qanday ko'rinishini jonli chiqaradi (Tailwind misollari Tailwind kutubxonasi bilan).
+  - **CSS** — mavzu ma'lumotidagi `html:` maydoni bilan birga natija ko'rinishi.
+  - **SQL / Git / terminal** — mavzu ma'lumotida `output:` maydoni orqali qo'lda yozilgan natija.
+- Yangi misol qo'shganda: `output: \`...\`` (qo'lda natija) yoki CSS uchun `html: \`...\`` maydonini yozish kifoya; JavaScript va HTML uchun hech narsa kerak emas.
+
 ### 2026-11-17 (Tailwind CSS va Git & GitHub)
 - **O'zgardi:** roadmapda "Express.js" o'rniga **Tailwind CSS**, "MongoDB" o'rniga **Git & GitHub** qo'yildi. (Express va MongoDB/Mongoose mavzulari Node.js sahifasida saqlanib qoladi.)
 - **Qo'shildi:** `src/data/Tailwind/` — 9 mavzu (o'rnatish, utility class lar, Flex/Grid, responsive va holatlar, sozlash, komponentlar, matn/gradient/effektlar, animatsiya, asosiy tushunchalar va v3→v4). Tailwind v4 asosida yozilgan.
