@@ -36,7 +36,12 @@ CREATE TABLE posts (
     id SERIAL PRIMARY KEY,
     title VARCHAR(100),
     user_id INT REFERENCES users(id) ON DELETE CASCADE
-);`
+);`,
+      output: `CREATE TABLE
+CREATE TABLE
+
+-- INSERT INTO users (name, age) VALUES ('Ali', 15);
+ERROR:  new row for relation "users" violates check constraint "users_age_check"`
     },
     {
       type: 'comparison',
@@ -74,7 +79,23 @@ INNER JOIN orders ON users.id = orders.user_id;
 -- FULL JOIN: Ikkala jadvalni to'liq chiqaradi (ma'lumot yo'qolmaydi)
 SELECT users.name, orders.product
 FROM users
-FULL JOIN orders ON users.id = orders.user_id;`
+FULL JOIN orders ON users.id = orders.user_id;`,
+      output: `-- INNER JOIN: faqat mos kelganlar
+ id | name | id | product | user_id
+----+------+----+---------+---------
+  1 | Ali  |  1 | iPhone  |       1
+  1 | Ali  |  2 | MacBook |       1
+  2 | Vali |  3 | AirPods |       2
+(3 rows)
+
+-- FULL JOIN: hech narsa yo'qolmaydi (Hasan ning buyurtmasi yo'q)
+  name  | product
+-------+---------
+ Ali    | iPhone
+ Ali    | MacBook
+ Vali   | AirPods
+ Hasan  |
+(4 rows)`
     },
     {
       type: 'code',
@@ -87,7 +108,19 @@ SELECT AVG(price) AS average_price FROM products;
 SELECT * FROM products
 WHERE price > (
     SELECT AVG(price) FROM products
-);`
+);`,
+      output: `-- AS (Alias)
+ average_price
+---------------
+        1200.0
+(1 row)
+
+-- Subquery: o'rtachadan qimmat mahsulotlar
+ id | name       | price
+----+------------+-------
+  1 | iPhone Pro |  1500
+  4 | MacBook Pro|  2500
+(2 rows)`
     },
     {
       type: 'code',
@@ -100,7 +133,13 @@ WHERE price > (
 );
 
 -- Joriy vaqtni olish
-SELECT NOW();`
+SELECT NOW();`,
+      output: `CREATE TABLE
+
+              now
+-------------------------------
+ 2026-11-17 10:30:45.123456+05
+(1 row)`
     },
     {
       type: 'code',

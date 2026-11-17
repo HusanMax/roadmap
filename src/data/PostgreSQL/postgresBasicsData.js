@@ -69,6 +69,7 @@ export const postgresBasicsData = {
     name VARCHAR(50),
     age INT
 );`,
+      output: `CREATE TABLE`,
     },
     {
       type: "code",
@@ -84,6 +85,8 @@ VALUES
 ('Ali', 22),
 ('Vali', 25),
 ('Hasan', 19);`,
+      output: `INSERT 0 1
+INSERT 0 3`,
     },
     {
       type: "code",
@@ -94,6 +97,21 @@ SELECT * FROM users;
 
 -- Aniq columnlarni olish
 SELECT name, age FROM users;`,
+      output: `-- SELECT * FROM users;
+ id | name  | age
+----+-------+-----
+  1 | Ali   |  22
+  2 | Vali  |  25
+  3 | Hasan |  19
+(3 rows)
+
+-- SELECT name, age FROM users;
+ name  | age
+-------+-----
+ Ali   |  22
+ Vali  |  25
+ Hasan |  19
+(3 rows)`,
     },
     {
       type: "code",
@@ -108,6 +126,30 @@ SELECT * FROM users WHERE age < 20;
 
 -- Matn bo'yicha filtrlash
 SELECT * FROM users WHERE name = 'Ali';`,
+      output: `-- age = 22
+ id | name | age
+----+------+-----
+  1 | Ali  |  22
+(1 row)
+
+-- age > 20
+ id | name | age
+----+------+-----
+  1 | Ali  |  22
+  2 | Vali |  25
+(2 rows)
+
+-- age < 20
+ id | name  | age
+----+-------+-----
+  3 | Hasan |  19
+(1 row)
+
+-- name = 'Ali'
+ id | name | age
+----+------+-----
+  1 | Ali  |  22
+(1 row)`,
     },
     {
       type: "code",
@@ -116,6 +158,7 @@ SELECT * FROM users WHERE name = 'Ali';`,
       code: `UPDATE users
 SET age = 23
 WHERE id = 1;`,
+      output: `UPDATE 1`,
     },
     {
       type: "code",
@@ -123,6 +166,7 @@ WHERE id = 1;`,
       text: "Jadvaldan row o'chirish uchun DELETE buyrug'idan foydalaniladi. WHERE shartisiz butun jadval tozalanadi!",
       code: `DELETE FROM users
 WHERE id = 3;`,
+      output: `DELETE 1`,
     },
     {
       type: "code",
@@ -133,6 +177,8 @@ ALTER TABLE users ADD email VARCHAR(100);
 
 -- Column o'chirish
 ALTER TABLE users DROP COLUMN email;`,
+      output: `ALTER TABLE
+ALTER TABLE`,
     },
     {
       type: "code",
@@ -161,6 +207,17 @@ DELETE FROM books WHERE id = 1;
 
 -- ALTER TABLE (Structure)
 ALTER TABLE books ADD published_year INT;`,
+      output: `CREATE TABLE
+INSERT 0 1
+
+ id | title | author | pages |    genre
+----+-------+--------+-------+-------------
+  1 | React | Ali    |   300 | Programming
+(1 row)
+
+UPDATE 1
+DELETE 1
+ALTER TABLE`,
     },
     {
       type: "tasks",

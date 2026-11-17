@@ -47,7 +47,21 @@ SELECT * FROM products WHERE price BETWEEN 500 AND 2000;
 SELECT * FROM products WHERE brand IN ('Apple', 'Samsung');
 
 -- IS NULL: Bo'sh qiymatlarni topish
-SELECT * FROM products WHERE discount IS NULL;`
+SELECT * FROM products WHERE discount IS NULL;`,
+      output: `-- Namuna natija (products jadvalidagi ma'lumotga qarab)
+-- LIKE '%Pro%'
+ id | name         | brand   | price | discount
+----+--------------+---------+-------+----------
+  1 | iPhone Pro   | Apple   |  1500 |
+  4 | MacBook Pro  | Apple   |  2500 |       10
+(2 rows)
+
+-- BETWEEN 500 AND 2000
+ id | name         | price
+----+--------------+-------
+  1 | iPhone Pro   |  1500
+  2 | Galaxy S     |   900
+(2 rows)`
     },
     {
       type: 'code',
@@ -68,7 +82,11 @@ CREATE TABLE orders (
 
 -- Ma'lumot qo'shish
 INSERT INTO users(name) VALUES ('Ali'), ('Vali');
-INSERT INTO orders(product, user_id) VALUES ('iPhone', 1), ('MacBook', 1), ('AirPods', 2);`
+INSERT INTO orders(product, user_id) VALUES ('iPhone', 1), ('MacBook', 1), ('AirPods', 2);`,
+      output: `CREATE TABLE
+CREATE TABLE
+INSERT 0 2
+INSERT 0 3`
     },
     {
       type: 'code',
@@ -76,7 +94,13 @@ INSERT INTO orders(product, user_id) VALUES ('iPhone', 1), ('MacBook', 1), ('Air
       text: "JOIN ikki yoki undan ortiq jadvalni umumiy ustun (Foreign Key) orqali birlashtiradi.",
       code: `SELECT users.name, orders.product
 FROM users
-JOIN orders ON users.id = orders.user_id;`
+JOIN orders ON users.id = orders.user_id;`,
+      output: `  name | product
+-------+---------
+ Ali   | iPhone
+ Ali   | MacBook
+ Vali  | AirPods
+(3 rows)`
     },
     {
       type: 'comparison',
@@ -107,7 +131,21 @@ GROUP BY category;
 SELECT category, COUNT(*)
 FROM products
 GROUP BY category
-HAVING COUNT(*) > 2;`
+HAVING COUNT(*) > 2;`,
+      output: `-- GROUP BY
+ category   | count
+------------+-------
+ Phone      |     3
+ Laptop     |     2
+ Accessory  |     4
+(3 rows)
+
+-- HAVING COUNT(*) > 2
+ category   | count
+------------+-------
+ Phone      |     3
+ Accessory  |     4
+(2 rows)`
     },
     {
       type: 'tasks',
