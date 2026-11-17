@@ -40,6 +40,14 @@ Har bir `data/<Yo'nalish>/` papkasida `AllData.js` bor — u shu yo'nalishdagi b
 
 ## O'zgarishlar tarixi
 
+### 2026-11-17 (interaktiv mashqlar)
+- **Qo'shildi:** `LiveCode.jsx` — mavzu ichida tahrirlanadigan kod muharriri:
+  - **🧩 Mini vazifa (`type: 'challenge'`)** — hayotiy vaziyat + vazifa; "Tekshirish" bosilganda kod xavfsiz oynada ishga tushib, testlardan o'tadi (✅/❌). Maslahat va yechim tugmalari bor, bajarilgani brauzerda eslab qolinadi. 21 ta: JavaScript (11), HTML/CSS (10), Tailwind (3).
+  - **🧪 Tajriba (`type: 'playground'`)** — kodni o'zgartirsangiz natija jonli yangilanadi (JavaScript, HTML, CSS).
+- **Qo'shildi:** `Quiz.jsx` (`type: 'quiz'`) — ko'p variantli savollar, javobdan keyin izoh va umumiy ball (Git & GitHub, PostgreSQL, Tailwind va HTML/CSS mavzularida).
+- `sandbox.js` — kodni `allow-scripts` bilan, ilova ma'lumotlariga kira olmaydigan iframe da ishga tushiradi.
+- Yangi vazifa yozish: `{ type: 'challenge', lang: 'js'|'html'|'css', story, task, starter, tests: [{ name, expr }], hint, solution }` — `expr` foydalanuvchi kodidan keyin (JS) yoki sahifa ustida (HTML/CSS) baholanadigan ifoda.
+
 ### 2026-11-17 (kod natijasi)
 - **Qo'shildi:** misol kodlar ostida "▶ Natija" paneli (`CodeOutput.jsx`):
   - **JavaScript** — kod izolyatsiyalangan (sandbox) oynada haqiqatan ishga tushiriladi va `console.log` natijasi ko'rsatiladi; `console.log` bo'lmasa o'zgaruvchilarning qiymati chiqadi. Qayta ishga tushirish tugmasi bor.
