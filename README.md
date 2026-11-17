@@ -38,6 +38,11 @@ Har bir `data/<Yo'nalish>/` papkasida `AllData.js` bor — u shu yo'nalishdagi b
 
 ## O'zgarishlar tarixi
 
+### 2026-11-17 (MDN asosida kengaytirish)
+- **Qo'shildi:** HTML/CSS yo'nalishiga 11–18-mavzular — MDN o'quv dasturidagi yetishmayotgan qismlar: `<head>` va matn teglari, video/audio/SVG/iframe, accessibility va ARIA, atribut/pseudo/combinator selektorlari, cascade va specificity, qiymatlar va o'lchamlar, fon/gradient/soya/filtr, forma-jadval bezash va DevTools.
+- **Qo'shildi:** Specificity kalkulyatori va gradient/soya laboratoriyasi vizual demolari.
+- Mavzular o'z so'zlarim bilan qisqa yozilgan; to'liq ma'lumot uchun har bir mavzu oxirida MDN havolalari berilgan (https://developer.mozilla.org/).
+
 ### 2026-11-17 (vizual tushuntirishlar)
 - **Qo'shildi:** `src/components/visuals/` — interaktiv demolar: Box Model, Flexbox, Grid, Position, Responsive, Transition/Animation, DOM daraxti, semantik maket va CSS selektorlar o'yinchog'i.
 - **Qo'shildi:** mavzu ma'lumotida `{ type: 'visual', visual: 'flexbox' }` bo'limi — nom `VisualBlock.jsx` dagi ro'yxatdan olinadi.
