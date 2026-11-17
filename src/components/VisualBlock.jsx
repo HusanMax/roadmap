@@ -10,6 +10,9 @@ import SemanticVisual from './visuals/SemanticVisual';
 import SelectorVisual from './visuals/SelectorVisual';
 import SpecificityVisual from './visuals/SpecificityVisual';
 import EffectsVisual from './visuals/EffectsVisual';
+import TailwindPlayground from './visuals/TailwindPlayground';
+import GitAreasVisual from './visuals/GitAreasVisual';
+import GitGraphVisual from './visuals/GitGraphVisual';
 
 // Ma'lumot faylida { type: 'visual', visual: 'flexbox' } deb yoziladi
 const VISUALS = {
@@ -23,7 +26,10 @@ const VISUALS = {
   semantic: SemanticVisual,
   selectors: SelectorVisual,
   specificity: SpecificityVisual,
-  effects: EffectsVisual
+  effects: EffectsVisual,
+  tailwindPlayground: TailwindPlayground,
+  gitAreas: GitAreasVisual,
+  gitGraph: GitGraphVisual
 };
 
 export default function VisualBlock({ name, accent }) {
