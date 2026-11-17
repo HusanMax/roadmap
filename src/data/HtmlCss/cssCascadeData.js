@@ -89,6 +89,34 @@ a { color: inherit; }         /* otasining rangini oladi */
       rule: 'Maqsad — kam va tekis specificity: shunda stillarni o\'zgartirish oson bo\'ladi.'
     },
     {
+      type: 'quiz',
+      title: "Bilimingizni sinab ko'ring",
+      questions: [
+        {
+          q: 'Qaysi selektor eng kuchli (specificity)?',
+          options: [
+          'p',
+          'p.note',
+          '#intro',
+          'p.note.big'
+          ],
+          answer: 2,
+          explain: 'id selektori (1,0,0) har qanday class (0,1,0) dan kuchli.'
+        },
+        {
+          q: "Bir xil kuchdagi ikki qoida to'qnashsa, qaysi biri g'olib?",
+          options: [
+          'Birinchi yozilgani',
+          'Keyingi yozilgani',
+          'Tasodifiy',
+          'Qisqaroq yozilgani'
+          ],
+          answer: 1,
+          explain: "Specificity teng bo'lsa, keyingisi ustun."
+        }
+      ]
+    },
+    {
       type: 'tasks',
       title: 'Amaliyot mashqlari',
       tasks: [
