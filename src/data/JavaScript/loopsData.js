@@ -52,6 +52,37 @@ export const loopsData = {
       code: 'for (let i = 0; i < 10; i++) {\n  if (i === 5) break;\n  console.log(i);\n}'
     },
     {
+      type: 'challenge',
+      lang: 'js',
+      title: 'Mini vazifa: savat summasi',
+      story: "Onlayn do'konda mijozning savatidagi mahsulot narxlari massivda turibdi. Umumiy summani chiqarish kerak.",
+      task: "for...of sikli bilan narxlar massividagi barcha qiymatlarni jami ga qo'shing.",
+      starter: `const narxlar = [12000, 8500, 15000, 4000];
+let jami = 0;
+
+// sikl yozing
+
+console.log("Jami:", jami);`,
+      tests: [
+        { name: "jami 39500 bo'lsin", expr: 'jami === 39500' }
+      ],
+      hint: 'for (const narx of narxlar) { jami += narx; }',
+      solution: `for (const narx of narxlar) {
+  jami += narx;
+}`
+    },
+    {
+      type: 'playground',
+      lang: 'js',
+      title: "Tajriba: ko'paytirish jadvali",
+      text: "Sonni o'zgartirib, boshqa jadvalni chiqaring. Siklni 12 gacha cho'zing.",
+      code: `const son = 7;
+
+for (let i = 1; i <= 10; i++) {
+  console.log(son + " x " + i + " = " + son * i);
+}`
+    },
+    {
       type: 'tasks',
       title: '8. Amaliyot Mashqlari',
       tasks: [
