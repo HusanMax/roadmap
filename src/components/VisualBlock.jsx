@@ -8,6 +8,8 @@ import TransitionVisual from './visuals/TransitionVisual';
 import HtmlTreeVisual from './visuals/HtmlTreeVisual';
 import SemanticVisual from './visuals/SemanticVisual';
 import SelectorVisual from './visuals/SelectorVisual';
+import SpecificityVisual from './visuals/SpecificityVisual';
+import EffectsVisual from './visuals/EffectsVisual';
 
 // Ma'lumot faylida { type: 'visual', visual: 'flexbox' } deb yoziladi
 const VISUALS = {
@@ -19,7 +21,9 @@ const VISUALS = {
   transition: TransitionVisual,
   htmlTree: HtmlTreeVisual,
   semantic: SemanticVisual,
-  selectors: SelectorVisual
+  selectors: SelectorVisual,
+  specificity: SpecificityVisual,
+  effects: EffectsVisual
 };
 
 export default function VisualBlock({ name, accent }) {
