@@ -45,6 +45,32 @@ export const errorHandlingData = {
       code: 'function validatePassword(password) {\n  if (password.length < 6) {\n    throw new Error(\'Parol kamida 6 ta belgi bo\\\'lishi kerak\');\n  }\n  if (!/[A-Z]/.test(password)) {\n    throw new Error(\'Parol katta harfni o\\\'z ichiga olishi kerak\');\n  }\n}\n\nfunction validateRegistration(userData) {\n  try {\n    validatePassword(userData.password);\n    validateUsername(userData.username);\n    return { success: true };\n  } catch (error) {\n    return { success: false, message: error.message };\n  }\n}'
     },
     {
+      type: 'challenge',
+      lang: 'js',
+      title: "Mini vazifa: xavfsiz JSON o'qish",
+      story: "Serverdan kelgan JSON ba'zan buzuq bo'ladi. Dastur yiqilib qolmasligi kerak.",
+      task: "xavfsizParse(matn) funksiyasini try...catch bilan yozing: to'g'ri JSON bo'lsa obyektni, xato bo'lsa null qaytarsin.",
+      starter: `function xavfsizParse(matn) {
+  // try...catch dan foydalaning
+}
+
+console.log(xavfsizParse('{"ism": "Ali"}'));
+console.log(xavfsizParse("buzuq json"));`,
+      tests: [
+        { name: "to'g'ri JSON obyekt qaytaradi", expr: 'xavfsizParse(\'{"a":1}\').a === 1' },
+        { name: 'buzuq JSON null qaytaradi', expr: "xavfsizParse('{buzuq') === null" },
+        { name: "bo'sh matn null qaytaradi", expr: "xavfsizParse('') === null" }
+      ],
+      hint: 'try { return JSON.parse(matn); } catch (e) { return null; }',
+      solution: `function xavfsizParse(matn) {
+  try {
+    return JSON.parse(matn);
+  } catch (e) {
+    return null;
+  }
+}`
+    },
+    {
       type: 'tasks',
       title: '7. Amaliy Mashqlar',
       tasks: [
