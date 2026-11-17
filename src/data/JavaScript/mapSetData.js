@@ -52,6 +52,39 @@ export const mapSetData = {
       code: 'const obj = {a: 1};\nconst map = new Map([["a", 1]]);\nconsole.log(Object.keys(obj).length); // 1\nconsole.log(map.size); // 1'
     },
     {
+      type: 'challenge',
+      lang: 'js',
+      title: 'Mini vazifa: takrorlanmaydigan teglar',
+      story: "Blog postlarida foydalanuvchilar teglarni takror yozib yuboradi. Teglar ro'yxatini unikal qilish kerak.",
+      task: 'Set yordamida teglar massividagi takrorlarni olib tashlab, unikal massivini yarating.',
+      starter: `const teglar = ["js", "react", "js", "css", "react", "html"];
+
+const unikal = []; // Set dan foydalaning
+
+console.log(unikal);`,
+      tests: [
+        { name: 'unikal 4 ta element', expr: 'unikal.length === 4' },
+        { name: 'hammasi mavjud', expr: "['js','react','css','html'].every(t => unikal.includes(t))" }
+      ],
+      hint: 'const unikal = [...new Set(teglar)];',
+      solution: `const unikal = [...new Set(teglar)];`
+    },
+    {
+      type: 'playground',
+      lang: 'js',
+      title: 'Tajriba: Map va Set',
+      text: "Yangi qiymat qo'shib ko'ring.",
+      code: `const narxlar = new Map();
+narxlar.set("olma", 12000);
+narxlar.set("banan", 18000);
+console.log(narxlar.get("olma"));
+console.log(narxlar.has("nok"));
+
+const ranglar = new Set(["qizil", "yashil", "qizil"]);
+ranglar.add("ko'k");
+console.log(ranglar.size, ranglar);`
+    },
+    {
       type: 'tasks',
       title: '8. Amaliyot Topshiriqlari',
       tasks: [
