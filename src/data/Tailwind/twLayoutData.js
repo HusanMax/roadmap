@@ -75,6 +75,39 @@ export const twLayoutData = {
 </div>`
     },
     {
+      type: 'challenge',
+      lang: 'html',
+      title: 'Mini vazifa: navbar (Tailwind)',
+      story: "Saytda navigatsiya paneli kerak: logo chapda, havolalar o'ngda, hamma vertikal o'rtada, ichki bo'shliq 16px.",
+      task: 'div ga flex, justify-between, items-center va p-4 class larini bering.',
+      starter: `<nav class="">
+  <span class="font-bold">Logo</span>
+  <div>Bosh · Haqida · Aloqa</div>
+</nav>`,
+      tests: [
+        { name: 'flex', expr: "getComputedStyle(document.querySelector('nav')).display === 'flex'" },
+        { name: 'justify-between', expr: "getComputedStyle(document.querySelector('nav')).justifyContent === 'space-between'" },
+        { name: 'items-center', expr: "getComputedStyle(document.querySelector('nav')).alignItems === 'center'" },
+        { name: 'p-4 (16px)', expr: "getComputedStyle(document.querySelector('nav')).paddingTop === '16px'" }
+      ],
+      hint: 'class="flex justify-between items-center p-4"',
+      solution: `<nav class="flex justify-between items-center p-4 bg-gray-100">
+  <span class="font-bold">Logo</span>
+  <div>Bosh · Haqida · Aloqa</div>
+</nav>`
+    },
+    {
+      type: 'playground',
+      lang: 'html',
+      title: 'Tajriba: Tailwind bilan kartochka',
+      text: "Class larni o'zgartiring: rang, soya, burchak, o'lcham.",
+      code: `<div class="max-w-sm rounded-2xl bg-white p-6 shadow-xl">
+  <h3 class="text-xl font-bold text-gray-800">Tailwind kartochka</h3>
+  <p class="mt-2 text-gray-500">Class larni o'zgartirib ko'ring!</p>
+  <button class="mt-4 rounded-lg bg-emerald-500 px-4 py-2 font-semibold text-white hover:bg-emerald-600">Boshlash</button>
+</div>`
+    },
+    {
       type: 'tasks',
       title: 'Amaliyot mashqlari',
       tasks: [
