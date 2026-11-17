@@ -83,6 +83,40 @@ export const introData = {
       ]
     },
     {
+      type: 'playground',
+      lang: 'js',
+      title: "Tajriba: o'zgaruvchilar bilan o'ynang",
+      text: "Qiymatlarni o'zgartiring va natija qanday o'zgarishini ko'ring. O'zingiz yangi o'zgaruvchi qo'shib ham ko'ring.",
+      code: `const ism = "Ali";
+let yosh = 22;
+const shahar = "Toshkent";
+
+console.log("Salom, " + ism + "!");
+console.log(ism + " " + yosh + " yoshda, " + shahar + "da yashaydi.");
+
+yosh = yosh + 1;
+console.log("Keyingi yil:", yosh);`
+    },
+    {
+      type: 'challenge',
+      lang: 'js',
+      title: 'Mini vazifa: kafedagi hisob-kitob',
+      story: "Siz kichik kafe uchun dastur yozyapsiz. Mijoz 3 ta choy (har biri 12 000 so'm) va 2 ta non (har biri 4 500 so'm) buyurdi.",
+      task: "Har bir mahsulot narxini narx*soni ko'rinishida hisoblab, umumiy summani jami o'zgaruvchisiga yozing.",
+      starter: `const choyNarxi = 12000;
+const nonNarxi = 4500;
+
+// Quyida jami ni hisoblang
+const jami = 0;
+
+console.log("Jami to'lov:", jami);`,
+      tests: [
+        { name: "jami 45000 ga teng bo'lsin", expr: 'jami === 45000' }
+      ],
+      hint: "jami = choyNarxi * 3 + nonNarxi * 2 ko'rinishida yozing.",
+      solution: `const jami = choyNarxi * 3 + nonNarxi * 2;`
+    },
+    {
       type: 'tasks',
       title: "8. Amaliyot Topshiriqlari",
       tasks: [
