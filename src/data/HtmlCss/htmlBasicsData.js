@@ -76,6 +76,33 @@ export const htmlBasicsData = {
       text: "Brauzer HTML ni o'qib, elementlardan iborat daraxt (DOM) yaratadi. Ichma-ich joylashgan elementlar ota-bola munosabatida bo'ladi."
     },
     {
+      type: 'challenge',
+      lang: 'html',
+      title: "Mini vazifa: o'zingiz haqingizda sahifa",
+      story: "Siz portfolio saytingizni yaratishni boshlayapsiz. Birinchi sahifada ismingiz sarlavha, ostida qisqa tanishuv bo'lishi kerak.",
+      task: "Bitta h1 sarlavha (ismingiz) va kamida ikkita p abzats (kim ekaningiz, nimani o'rganayotganingiz) yozing.",
+      starter: `<!-- Kodingizni shu yerga yozing -->
+`,
+      tests: [
+        { name: 'Bitta h1 sarlavha bor', expr: "document.querySelectorAll('h1').length === 1" },
+        { name: "h1 bo'sh emas", expr: "document.querySelector('h1') && document.querySelector('h1').textContent.trim().length > 1" },
+        { name: 'Kamida 2 ta p bor', expr: "document.querySelectorAll('p').length >= 2" }
+      ],
+      hint: "<h1>Ismingiz</h1> yozing, keyin ikkita <p>...</p> qo'shing.",
+      solution: `<h1>Ali Valiyev</h1>
+<p>Men frontend dasturchi bo'lishni o'rganyapman.</p>
+<p>Hozir HTML va CSS ustida ishlayapman.</p>`
+    },
+    {
+      type: 'playground',
+      lang: 'html',
+      title: "Tajriba: HTML ni o'zgartiring",
+      text: "Teglarni almashtiring, yangi element qo'shing — natija o'ng tomonda darhol yangilanadi.",
+      code: `<h1>Salom, HTML!</h1>
+<p>Bu <strong>qalin</strong> va <em>kursiv</em> matn.</p>
+<a href="https://developer.mozilla.org">MDN ga havola</a>`
+    },
+    {
       type: 'tasks',
       title: 'Amaliyot mashqlari',
       tasks: [
