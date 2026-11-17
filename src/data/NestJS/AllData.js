@@ -7,6 +7,7 @@ import { nestjsAuthorizationGuideData } from './nestjsAuthorizationGuideData';
 import { nestjsFileuploadGuideData } from './nestjsFileuploadGuideData';
 import { nestjsAdvancedPrismaQueriesGuideData } from './nestjsAdvancedPrismaQueriesGuideData';
 import { nestjsDatabaseRelationshipsGuideData } from './nestjsDatabaseRelationshipsGuideData';
+import { nestjsSwaggerGuideData } from './nestjsSwaggerGuideData';
 
 
 export const nestAllModules = [
@@ -19,4 +20,5 @@ export const nestAllModules = [
   nestjsFileuploadGuideData,
   nestjsAdvancedPrismaQueriesGuideData,
   nestjsDatabaseRelationshipsGuideData,
+  nestjsSwaggerGuideData,
 ];
