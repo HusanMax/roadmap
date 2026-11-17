@@ -8,6 +8,14 @@ import { flexboxData } from './flexboxData';
 import { gridData } from './gridData';
 import { responsiveData } from './responsiveData';
 import { positionAnimationData } from './positionAnimationData';
+import { htmlHeadTextData } from './htmlHeadTextData';
+import { htmlMediaData } from './htmlMediaData';
+import { htmlAccessibilityData } from './htmlAccessibilityData';
+import { cssSelectorsAdvancedData } from './cssSelectorsAdvancedData';
+import { cssCascadeData } from './cssCascadeData';
+import { cssValuesSizingData } from './cssValuesSizingData';
+import { cssBackgroundsEffectsData } from './cssBackgroundsEffectsData';
+import { cssStylingElementsData } from './cssStylingElementsData';
 
 export const htmlCssAllModules = [
   htmlBasicsData,
@@ -20,4 +28,12 @@ export const htmlCssAllModules = [
   gridData,
   responsiveData,
   positionAnimationData,
+  htmlHeadTextData,
+  htmlMediaData,
+  htmlAccessibilityData,
+  cssSelectorsAdvancedData,
+  cssCascadeData,
+  cssValuesSizingData,
+  cssBackgroundsEffectsData,
+  cssStylingElementsData,
 ];
