@@ -87,6 +87,30 @@ footer  { grid-area: footer; }`,
       text: "Ustunlar soni va gap ni o'zgartiring, katakni cho'zib ko'ring."
     },
     {
+      type: 'challenge',
+      lang: 'css',
+      title: 'Mini vazifa: rasmlar galereyasi',
+      story: 'Fotograf portfoliosi uchun galereya kerak: 3 ustunli, rasmlar orasida 16px masofa.',
+      task: 'Grid yordamida .gallery ni 3 ta teng ustunli qiling va gap bering.',
+      html: `<style>.gallery div{background:#2965f1;color:#fff;padding:30px;border-radius:8px;text-align:center}</style><div class="gallery"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div></div>`,
+      starter: `/* grid yozing */
+.gallery {
+
+}
+`,
+      tests: [
+        { name: 'display: grid', expr: "getComputedStyle(document.querySelector('.gallery')).display === 'grid'" },
+        { name: '3 ta ustun', expr: "(function(){var v=getComputedStyle(document.querySelector('.gallery')).gridTemplateColumns; var m=v.match(/repeat\\((\\d+)/); return m ? +m[1]===3 : v.trim().split(/\\s+/).length===3;})()" },
+        { name: 'gap 16px', expr: "getComputedStyle(document.querySelector('.gallery')).rowGap === '16px'" }
+      ],
+      hint: 'display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;',
+      solution: `.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}`
+    },
+    {
       type: 'tasks',
       title: 'Amaliyot mashqlari',
       tasks: [
