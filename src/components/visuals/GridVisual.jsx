@@ -19,7 +19,7 @@ export default function GridVisual({ accent }) {
       <div style={{ display: 'grid', gridTemplateColumns: `repeat(${cols}, 1fr)`, gap, padding: 10, background: '#0f172a', border: '2px dashed #475569', borderRadius: 10 }}>
         {Array.from({ length: 9 }, (_, i) => (
           <div key={i} style={{
-            background: itemColors[i % itemColors.length], height: 54, borderRadius: 6, color: '#fff', fontWeight: 700,
+            background: itemColors[i % itemColors.length], borderRadius: 6, color: '#fff', fontWeight: 700,
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             gridColumn: i === 0 && span && cols > 1 ? 'span 2' : undefined,
             gridRow: i === 1 && rowSpan ? 'span 2' : undefined,
