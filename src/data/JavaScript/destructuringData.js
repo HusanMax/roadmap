@@ -61,6 +61,27 @@ export const destructuringData = {
       code: 'const user = {\n  name: "John",\n  age: 25,\n  active: true,\n  hobbies: ["reading", "swimming"]\n};\nconst jsonString = JSON.stringify(user);\nconsole.log(jsonString);\n\nconst jsonParsedString = \'{"name":"John","age":25,"active":true}\';\nconst parsedUser = JSON.parse(jsonParsedString);\nconsole.log(parsedUser.name); // "John"'
     },
     {
+      type: 'challenge',
+      lang: 'js',
+      title: 'Mini vazifa: foydalanuvchi kartochkasi',
+      story: 'Profil kartochkasi uchun API dan kelgan obyektdan kerakli maydonlarni olib, bitta matn qilish kerak.',
+      task: 'kartochka(user) funksiyasini destructuring bilan yozing: "Ali (22) — Toshkent" ko\'rinishidagi matn qaytarsin.',
+      starter: `function kartochka(user) {
+  // { name, age, city } ni obyektdan ajratib oling
+}
+
+console.log(kartochka({ name: "Ali", age: 22, city: "Toshkent" }));`,
+      tests: [
+        { name: 'Ali (22) — Toshkent', expr: "kartochka({name:'Ali',age:22,city:'Toshkent'}) === 'Ali (22) — Toshkent'" },
+        { name: 'Vali (30) — Samarqand', expr: "kartochka({name:'Vali',age:30,city:'Samarqand'}) === 'Vali (30) — Samarqand'" }
+      ],
+      hint: 'const { name, age, city } = user; keyin shablon qatori: `${name} (${age}) — ${city}`.',
+      solution: `function kartochka(user) {
+  const { name, age, city } = user;
+  return \`\${name} (\${age}) — \${city}\`;
+}`
+    },
+    {
       type: 'tasks',
       title: '9. Amaliyot Topshiriqlari',
       tasks: [
