@@ -25,7 +25,8 @@ export const flexboxData = {
   align-items: center;          /* ko'ndalang o'q bo'ylab */
   flex-wrap: wrap;              /* sig'masa keyingi qatorga */
   gap: 16px;                    /* elementlar orasi */
-}`
+}`,
+      html: `<style>.item{background:#e44d26;color:#fff;padding:14px 20px;border-radius:6px;font-weight:bold}.container{border:2px dashed #94a3b8;padding:8px}</style><div class="container"><div class="item">1</div><div class="item">2</div><div class="item">3</div></div>`
     },
     {
       type: 'comparison',
@@ -56,7 +57,8 @@ export const flexboxData = {
 .special {
   align-self: flex-end; /* faqat shu element boshqacha tekislanadi */
   order: -1;            /* tartibni o'zgartirish */
-}`
+}`,
+      html: `<style>.box{display:flex;gap:8px;border:2px dashed #94a3b8;padding:8px}.box div{background:#2965f1;color:#fff;padding:12px;border-radius:6px;text-align:center}</style><div class="box"><div class="item">flex: 1</div><div class="item-wide">flex: 2</div><div class="item-fixed">200px</div><div class="special">special</div></div>`
     },
     {
       type: 'code',
@@ -74,7 +76,8 @@ export const flexboxData = {
   display: flex;
   gap: 20px;
   list-style: none;
-}`
+}`,
+      html: `<ul class="nav-links"><li>Bosh</li><li>Haqida</li><li>Aloqa</li></ul>`
     },
     {
       type: 'code',
@@ -86,7 +89,8 @@ export const flexboxData = {
   justify-content: center;  /* gorizontal */
   align-items: center;      /* vertikal */
   min-height: 100vh;
-}`
+}`,
+      html: `<style>.center{border:2px dashed #94a3b8;min-height:160px!important}.center div{background:#10b981;color:#fff;padding:12px 20px;border-radius:6px}</style><div class="center"><div>Markazda</div></div>`
     },
     {
       type: 'visual',

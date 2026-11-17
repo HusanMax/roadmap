@@ -29,7 +29,8 @@ export const boxModelData = {
 
 /* Qisqa yozuv tartibi: yuqori, o'ng, past, chap (soat strelkasi bo'yicha) */
 .box { padding: 10px 20px 10px 20px; }
-.box2 { margin: 10px 20px; }       /* yuqori-past | chap-o'ng */`
+.box2 { margin: 10px 20px; }       /* yuqori-past | chap-o'ng */`,
+      html: `<div class="card">Kartochka</div><div class="box" style="background:#fde8e1">Box: padding 10px 20px</div>`
     },
     {
       type: 'code',
@@ -47,7 +48,8 @@ export const boxModelData = {
   padding: 20px;
   border: 2px solid #333;
   /* Umumiy kenglik aynan 300px bo'ladi */
-}`
+}`,
+      html: `<div class="card" style="background:#e0f2fe">Umumiy kenglik aynan 300px</div>`
     },
     {
       type: 'comparison',

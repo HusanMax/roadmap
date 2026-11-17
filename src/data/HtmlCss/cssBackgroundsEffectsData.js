@@ -36,7 +36,8 @@ export const cssBackgroundsEffectsData = {
 .g4 { background: conic-gradient(red, yellow, green, blue, red); }   /* aylana bo'ylab */
 
 /* Rang to'xtash joylari */
-.g5 { background: linear-gradient(#e44d26 0%, #e44d26 40%, #fff 40%); }`
+.g5 { background: linear-gradient(#e44d26 0%, #e44d26 40%, #fff 40%); }`,
+      html: `<style>div{height:48px;margin-bottom:6px;border-radius:6px}</style><div class="g1"></div><div class="g2"></div><div class="g3"></div><div class="g4"></div><div class="g5"></div>`
     },
     {
       type: 'code',
@@ -55,7 +56,8 @@ export const cssBackgroundsEffectsData = {
 .pill { border-radius: 999px; }      /* "tabletka" shakli */
 .tab { border-radius: 12px 12px 0 0; }
 .line { border-bottom: 3px dashed gray; }
-.ring { outline: 3px solid dodgerblue; outline-offset: 4px; }`
+.ring { outline: 3px solid dodgerblue; outline-offset: 4px; }`,
+      html: `<div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;padding:12px"><div class="box" style="padding:14px">.box</div><div class="circle" style="background:#e44d26"></div><div class="pill" style="background:#2965f1;color:#fff;padding:8px 20px">.pill</div><div class="tab" style="background:#10b981;color:#fff;padding:8px 20px">.tab</div><div class="line" style="padding:8px">.line</div></div>`
     },
     {
       type: 'code',
@@ -73,7 +75,8 @@ img:hover { filter: none; }
 .glass { backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.15); }
 
 .blend { mix-blend-mode: multiply; }
-.faded { opacity: 0.6; }`
+.faded { opacity: 0.6; }`,
+      html: `<div style="display:flex;gap:24px;flex-wrap:wrap;padding:20px;background:#e2e8f0"><div class="card" style="background:#fff;padding:20px;border-radius:8px">box-shadow</div><h1>text-shadow</h1><div class="faded" style="background:#e44d26;color:#fff;padding:20px">opacity: 0.6</div></div>`
     },
     {
       type: 'visual',

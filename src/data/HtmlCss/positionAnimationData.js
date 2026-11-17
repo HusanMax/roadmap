@@ -55,7 +55,8 @@ export const positionAnimationData = {
 .btn:hover {
   background: #c23a17;
   transform: translateY(-3px) scale(1.05);
-}`
+}`,
+      html: `<button class="btn" style="border:none;cursor:pointer">Ustiga sichqoncha keltiring</button>`
     },
     {
       type: 'code',
@@ -66,7 +67,8 @@ export const positionAnimationData = {
   transform: rotate(45deg);      /* burish */
   transform: scale(1.2);         /* kattalashtirish */
   transform: translateY(-10px) rotate(5deg); /* birgalikda */
-}`
+}`,
+      html: `<div class="box" style="width:80px;height:80px;background:#e44d26;margin:30px;color:#fff;display:flex;align-items:center;justify-content:center">box</div>`
     },
     {
       type: 'code',
@@ -89,7 +91,8 @@ export const positionAnimationData = {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-.fade { animation: fadeIn 0.6s ease forwards; }`
+.fade { animation: fadeIn 0.6s ease forwards; }`,
+      html: `<div style="display:flex;gap:30px;padding:30px"><div class="heart" style="font-size:40px">❤️</div><div class="fade" style="font-size:20px">Paydo bo'ladi</div></div>`
     },
     {
       type: 'code',
@@ -109,7 +112,8 @@ export const positionAnimationData = {
 
 .dark {
   --primary: #ff7a50;   /* faqat shu qismda qiymat o'zgaradi */
-}`
+}`,
+      html: `<button class="btn" style="border:none;color:#fff;padding:10px 20px;cursor:pointer">var(--primary)</button><div class="dark" style="margin-top:10px"><button class="btn" style="border:none;color:#fff;padding:10px 20px;cursor:pointer">.dark ichida boshqa rang</button></div>`
     },
     {
       type: 'rule',

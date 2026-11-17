@@ -45,7 +45,8 @@ h1 {
 .fit { width: fit-content; }   /* kontentga mos */
 .stretch { width: 100%; }
 
-img { max-width: 100%; height: auto; }`
+img { max-width: 100%; height: auto; }`,
+      html: `<div class="card" style="background:#e0f2fe">.card: 300px, 16/9</div>`
     },
     {
       type: 'code',
@@ -64,7 +65,8 @@ img { max-width: 100%; height: auto; }`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}`
+}`,
+      html: `<style>.box{width:100%;border:1px solid #94a3b8;margin-bottom:6px;padding:4px}</style><div class="box a">overflow: visible — juda uzun matn qutidan tashqariga chiqib ketishi mumkin, balandlik cheklangan. Uzun matn uzun matn uzun matn uzun matn.</div><div class="box b">overflow: hidden — ortiqcha matn kesiladi. Uzun matn uzun matn uzun matn uzun matn uzun matn uzun matn.</div><div class="box c">overflow: auto — scroll chiqadi. Uzun matn uzun matn uzun matn uzun matn uzun matn uzun matn uzun matn.</div><div class="title" style="width:200px">Juda uzun sarlavha bir qatorga sig'maydi</div>`
     },
     {
       type: 'rule',

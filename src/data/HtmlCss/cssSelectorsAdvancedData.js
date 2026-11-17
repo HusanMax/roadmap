@@ -17,7 +17,8 @@ a[href*="example"] { }           /* ichida BOR */
 input[type="checkbox"] { }
 
 /* Misol: PDF havolalarga ikonka */
-a[href$=".pdf"]::after { content: " 📄"; }`
+a[href$=".pdf"]::after { content: " 📄"; }`,
+      html: `<p><a href="https://example.com" target="_blank">Tashqi (target)</a></p><p><a href="https://example.com/x">https bilan boshlanadi</a></p><p><a href="/hujjat.pdf">hujjat.pdf</a></p><p><input type="checkbox"/> checkbox</p>`
     },
     {
       type: 'code',
@@ -38,7 +39,8 @@ li:nth-child(2) { }         /* 2-element */
 li:nth-child(odd) { }       /* toq elementlar */
 li:nth-child(3n) { }        /* har uchinchisi */
 p:not(.note) { }            /* .note bo'lmagan p lar */
-:is(h1, h2, h3) span { }    /* ro'yxatdan istalgani */`
+:is(h1, h2, h3) span { }    /* ro'yxatdan istalgani */`,
+      html: `<ul><li>1-element</li><li>2-element</li><li>3-element</li><li>4-element</li><li>5-element</li><li>6-element</li></ul><p><a href="#">Havola (hover)</a></p><p class="note">.note abzats</p><p>Boshqa abzats</p><input placeholder="focus qiling"/> <input disabled placeholder="disabled"/>`
     },
     {
       type: 'code',
@@ -59,7 +61,8 @@ input::placeholder { color: #9ca3af; }
 .quote::before {
   content: "“";
   font-size: 3rem;
-}`
+}`,
+      html: `<p>Bu birinchi qator matni. Davomi shu yerda, ko'proq matn yozilgan.</p><p class="quote">Iqtibos matni</p><p><span class="required">Majburiy maydon</span></p><input placeholder="placeholder rangi"/><p>Matnni sichqoncha bilan belgilang (::selection)</p>`
     },
     {
       type: 'comparison',
@@ -84,7 +87,8 @@ h2 ~ p { color: gray; }
 .menu > li { display: inline-block; }
 
 /* Bir necha class birga: ikkalasi ham bor element */
-.btn.primary { background: #e44d26; }`
+.btn.primary { background: #e44d26; }`,
+      html: `<h2>Sarlavha</h2><p>h2 dan keyingi birinchi p</p><p>h2 dan keyingi boshqa p</p><ul class="menu"><li>Bir</li><li>Ikki</li></ul><button class="btn primary">btn primary</button>`
     },
     {
       type: 'visual',

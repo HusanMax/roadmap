@@ -58,7 +58,8 @@ ul > li { list-style: square; }
 /* Pseudo-class */
 a:hover { color: tomato; }
 li:first-child { font-weight: bold; }
-input:focus { outline: 2px solid dodgerblue; }`
+input:focus { outline: 2px solid dodgerblue; }`,
+      html: `<h1>Sarlavha h1</h1><h2>Sarlavha h2</h2><h3>Sarlavha h3</h3><div id="logo" style="background:#e5e7eb">#logo</div><div class="card">.card element</div><nav><a href="#">Havola</a> <a href="#">Havola 2</a></nav><ul><li>Bir</li><li>Ikki</li><li>Uch</li></ul><input placeholder="Bosib ko'ring (focus)"/>`
     },
     {
       type: 'comparison',
@@ -89,7 +90,8 @@ h1 {
 
 a {
   text-decoration: none;
-}`
+}`,
+      html: `<h1>Katta sarlavha</h1><p>Oddiy abzats matni bu yerda. Qatorlar orasi line-height bilan boshqariladi, shuning uchun matn o'qishga qulay bo'ladi.</p><a href="#">Havola (tagi chizilmagan)</a>`
     },
     {
       type: 'list',

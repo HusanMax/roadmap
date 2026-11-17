@@ -29,7 +29,8 @@ export const gridData = {
 .layout {
   display: grid;
   grid-template-columns: 250px 1fr;        /* yon panel 250px, qolgani asosiy */
-}`
+}`,
+      html: `<style>.grid div,.layout div{background:#2965f1;color:#fff;padding:18px;border-radius:6px;text-align:center}</style><div class="grid"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div></div>`
     },
     {
       type: 'code',
@@ -42,7 +43,8 @@ export const gridData = {
 .big {
   grid-column: span 2;        /* 2 ustun */
   grid-row: span 2;           /* 2 qator */
-}`
+}`,
+      html: `<style>.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.grid div{background:#10b981;color:#fff;padding:18px;border-radius:6px;text-align:center}</style><div class="grid"><div class="header">header: 1 / -1</div><div class="big">big: span 2</div><div>3</div><div>4</div><div>5</div></div>`
     },
     {
       type: 'code',
@@ -63,7 +65,8 @@ export const gridData = {
 header  { grid-area: header; }
 aside   { grid-area: sidebar; }
 main    { grid-area: main; }
-footer  { grid-area: footer; }`
+footer  { grid-area: footer; }`,
+      html: `<style>.page{min-height:260px!important}.page>*{display:flex;align-items:center;justify-content:center;color:#fff;border-radius:4px;margin:0}header{background:#e44d26}aside{background:#2965f1}main{background:#10b981}footer{background:#a855f7}</style><div class="page"><header>header</header><aside>sidebar</aside><main>main</main><footer>footer</footer></div>`
     },
     {
       type: 'code',
@@ -74,7 +77,8 @@ footer  { grid-area: footer; }`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 24px;
-}`
+}`,
+      html: `<style>.cards div{background:#f59e0b;color:#fff;padding:24px;border-radius:8px;text-align:center}</style><div class="cards"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div></div>`
     },
     {
       type: 'visual',

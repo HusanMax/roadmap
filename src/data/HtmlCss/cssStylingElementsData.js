@@ -51,7 +51,8 @@ button {
 button:hover { background: #c23a17; }
 button:disabled { opacity: 0.5; cursor: not-allowed; }
 
-input[type="checkbox"] { accent-color: #e44d26; }`
+input[type="checkbox"] { accent-color: #e44d26; }`,
+      html: `<form style="display:grid;gap:10px;max-width:280px"><input placeholder="Ismingiz"/><input type="email" placeholder="Email (focus qiling)"/><label><input type="checkbox"/> Roziman</label><button>Yuborish</button><button disabled>Faol emas</button></form>`
     },
     {
       type: 'code',
@@ -72,7 +73,8 @@ thead th { background: #1f2937; color: #fff; }
 tbody tr:nth-child(even) { background: #f1f5f9; }   /* zebra */
 tbody tr:hover { background: #fde8e1; }
 
-caption { caption-side: bottom; font-style: italic; }`
+caption { caption-side: bottom; font-style: italic; }`,
+      html: `<table><caption>Talabalar</caption><thead><tr><th>Ism</th><th>Yosh</th></tr></thead><tbody><tr><td>Ali</td><td>22</td></tr><tr><td>Vali</td><td>25</td></tr><tr><td>Hasan</td><td>19</td></tr></tbody></table>`
     },
     {
       type: 'list',
