@@ -5,6 +5,7 @@ import NodeJsPage from './pages/NodeJsPage';
 import ReactReduxPage from './pages/ReactReduxPage';
 import PostgreSQLPage from './pages/PostgreSQLPage';
 import NestJsPage from './pages/NestJsPage';
+import HtmlCssPage from './pages/HtmlCssPage';
 
 const NODES = [
   { title: 'HTML / CSS', id: 'html-css' },
@@ -26,7 +27,9 @@ export default function App() {
   const [activePage, setActivePage] = useState(null);
 
   const handleNodeClick = (node) => {
-    if (node.id === 'javascript') {
+    if (node.id === 'html-css') {
+      setActivePage('html-css');
+    } else if (node.id === 'javascript') {
       setActivePage('javascript');
     } else if (node.id === 'nodejs') {
       setActivePage('nodejs');
@@ -45,6 +48,8 @@ export default function App() {
     <div>
       {!activePage ? (
         <RoadmapMain nodes={NODES} onNodeClick={handleNodeClick} />
+      ) : activePage === 'html-css' ? (
+        <HtmlCssPage onBack={() => setActivePage(null)} />
       ) : activePage === 'javascript' ? (
         <JavaScriptPage onBack={() => setActivePage(null)} />
       ) : activePage === 'nodejs' ? (
