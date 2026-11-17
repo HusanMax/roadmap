@@ -86,6 +86,12 @@ h1 { font-size: clamp(1.8rem, 5vw, 3rem); }
       rule: 'Mobile-first: kichik ekrandan boshlang, kengayganda qoidalar qo\'shing — kod qisqa va tartibli bo\'ladi.'
     },
     {
+      type: 'visual',
+      visual: 'responsive',
+      title: "Ekran kengligini o'zgartirib ko'ring",
+      text: "Sliderni suring: breakpoint larda maket qanday o'zgaradi."
+    },
+    {
       type: 'tasks',
       title: 'Amaliyot mashqlari',
       tasks: [
