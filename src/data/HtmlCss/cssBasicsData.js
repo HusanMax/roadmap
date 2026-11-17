@@ -121,6 +121,58 @@ a {
       text: "Selektorni yozing yoki tugmalardan tanlang: mos kelgan elementlar sahifada qizil ramka bilan yoritiladi."
     },
     {
+      type: 'challenge',
+      lang: 'css',
+      title: 'Mini vazifa: brend ranglari',
+      story: "Kompaniya yangi dizayn qo'llanmasini berdi: sarlavha rangi #e44d26, abzats matni #334155 va 18px, tugma foni #e44d26 (oq matn) bo'lishi kerak.",
+      task: 'CSS yozib shu uchta talabni bajaring.',
+      html: `<h1>Mening saytim</h1>
+<p class="intro">Salom! Bu CSS bilan bezaladigan sahifa.</p>
+<a href="#" class="btn">Boshlash</a>`,
+      starter: `/* CSS kodingizni yozing */
+h1 {
+
+}
+`,
+      tests: [
+        { name: 'h1 rangi #e44d26', expr: "getComputedStyle(document.querySelector('h1')).color === 'rgb(228, 77, 38)'" },
+        { name: 'p.intro rangi #334155', expr: "getComputedStyle(document.querySelector('.intro')).color === 'rgb(51, 65, 85)'" },
+        { name: 'p.intro 18px', expr: "getComputedStyle(document.querySelector('.intro')).fontSize === '18px'" },
+        { name: 'tugma foni #e44d26', expr: "getComputedStyle(document.querySelector('.btn')).backgroundColor === 'rgb(228, 77, 38)'" },
+        { name: 'tugma matni oq', expr: "getComputedStyle(document.querySelector('.btn')).color === 'rgb(255, 255, 255)'" }
+      ],
+      hint: 'h1 { color: #e44d26; } .intro { color: #334155; font-size: 18px; } .btn { background: #e44d26; color: #fff; }',
+      solution: `h1 { color: #e44d26; }
+.intro { color: #334155; font-size: 18px; }
+.btn {
+  background: #e44d26;
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 6px;
+}`
+    },
+    {
+      type: 'playground',
+      lang: 'css',
+      title: 'Tajriba: CSS bilan bezang',
+      text: "Ranglar, o'lcham va soyani o'zgartirib ko'ring. Yangi qoidalar qo'shing!",
+      html: `<h1>Mening saytim</h1>
+<p class="intro">Salom! Bu CSS bilan bezaladigan sahifa.</p>
+<a href="#" class="btn">Boshlash</a>`,
+      code: `.btn {
+  background: #e44d26;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+.btn:hover {
+  background: #c23a17;
+}
+h1 { color: #1f2937; }`
+    },
+    {
       type: 'tasks',
       title: 'Amaliyot mashqlari',
       tasks: [
