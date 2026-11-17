@@ -56,6 +56,39 @@ export const functionsData = {
       ]
     },
     {
+      type: 'challenge',
+      lang: 'js',
+      title: 'Mini vazifa: chegirma hisoblagich',
+      story: "Do'konda aksiya: mahsulotga foizli chegirma beriladi. Kassir uchun yakuniy narxni hisoblaydigan funksiya kerak.",
+      task: 'chegirma(narx, foiz) funksiyasini yozing: chegirmadan keyingi narxni qaytarsin. Masalan chegirma(200000, 10) → 180000.',
+      starter: `function chegirma(narx, foiz) {
+  // yakuniy narxni qaytaring
+}
+
+console.log(chegirma(200000, 10));`,
+      tests: [
+        { name: '200000 dan 10% → 180000', expr: 'chegirma(200000, 10) === 180000' },
+        { name: '50000 dan 0% → 50000', expr: 'chegirma(50000, 0) === 50000' },
+        { name: '80000 dan 25% → 60000', expr: 'chegirma(80000, 25) === 60000' }
+      ],
+      hint: 'Yakuniy narx = narx - narx * foiz / 100.',
+      solution: `function chegirma(narx, foiz) {
+  return narx - (narx * foiz) / 100;
+}`
+    },
+    {
+      type: 'playground',
+      lang: 'js',
+      title: 'Tajriba: arrow funksiya',
+      text: 'Funksiyaga turli qiymat bering va natijani kuzating.',
+      code: `const kvadrat = (n) => n * n;
+const salom = (ism, til = "uz") => til === "uz" ? "Salom, " + ism : "Hello, " + ism;
+
+console.log(kvadrat(7));
+console.log(salom("Ali"));
+console.log(salom("Ali", "en"));`
+    },
+    {
       type: 'tasks',
       title: '8. Amaliyot Topshiriqlari',
       tasks: [
