@@ -78,6 +78,45 @@ ssh -T git@github.com            # ulanishni tekshirish`
       rule: 'Kuniga kamida bir marta push qiling: kod xavfsiz saqlanadi va jamoa yangiliklarni ko\'radi.'
     },
     {
+      type: 'quiz',
+      title: "Bilimingizni sinab ko'ring",
+      questions: [
+        {
+          q: 'Lokal loyihani birinchi marta GitHub ga yuborish uchun qaysi buyruq kerak?',
+          options: [
+          "git remote add origin URL, so'ng git push -u origin main",
+          'git upload',
+          'git send github',
+          'git clone URL'
+          ],
+          answer: 0,
+          explain: 'Avval remote ulanadi, keyin push qilinadi.'
+        },
+        {
+          q: 'Boshqa odam GitHub ga yangilik yubordi. Uni kompyuteringizga olish uchun?',
+          options: [
+          'git push',
+          'git pull',
+          'git init',
+          'git add .'
+          ],
+          answer: 1,
+          explain: "git pull = fetch + merge: yangiliklarni olib, joriy branch ga qo'shadi."
+        },
+        {
+          q: 'Maxfiy kalitingiz (token) tasodifan GitHub ga yuklandi. Birinchi qadam?',
+          options: [
+          "Faylni o'chirib qo'yish yetarli",
+          'Kalitni darhol bekor qilib (revoke), yangisini olish',
+          "Repo nomini o'zgartirish",
+          'Hech narsa qilmaslik'
+          ],
+          answer: 1,
+          explain: 'Kalit tarixda qoladi va avtomatik skanerlar uni topishi mumkin — avval kalitni almashtiring.'
+        }
+      ]
+    },
+    {
       type: 'tasks',
       title: 'Amaliyot mashqlari',
       tasks: [

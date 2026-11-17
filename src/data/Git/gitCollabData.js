@@ -62,6 +62,45 @@ git merge upstream/main          # asl loyihadagi yangiliklarni olish`
       rule: 'PR — kod haqida suhbat. Izohlar sizga emas, kodga tegishli.'
     },
     {
+      type: 'quiz',
+      title: "Bilimingizni sinab ko'ring",
+      questions: [
+        {
+          q: 'Pull Request nima uchun kerak?',
+          options: [
+          'Faylni yuklab olish uchun',
+          "O'zgarishlarni main ga qo'shishdan oldin jamoa ko'rib chiqishi uchun",
+          "Repo ni o'chirish uchun",
+          'Parolni almashtirish uchun'
+          ],
+          answer: 1,
+          explain: "PR — kod ko'rib chiqish (review), muhokama va avtomatik testlar uchun joy."
+        },
+        {
+          q: 'Begona ochiq loyihaga tuzatish yubormoqchisiz. Avval nima qilasiz?',
+          options: [
+          "To'g'ridan-to'g'ri main ga push qilasiz",
+          "Fork qilib, o'z nusxangizda o'zgartirasiz va PR yuborasiz",
+          "Loyihani o'chirasiz",
+          "Egasiga parol so'raysiz"
+          ],
+          answer: 1,
+          explain: "Sizda yozish huquqi yo'q, shuning uchun fork → o'zgartirish → PR yo'li ishlatiladi."
+        },
+        {
+          q: "PR tavsifiga 'Closes #12' yozsangiz nima bo'ladi?",
+          options: [
+          'Hech narsa',
+          "PR merge bo'lganda 12-issue avtomatik yopiladi",
+          "PR o'chiriladi",
+          "12 ta commit qo'shiladi"
+          ],
+          answer: 1,
+          explain: "Maxsus so'zlar (Closes, Fixes, Resolves) issue ni avtomatik yopadi."
+        }
+      ]
+    },
+    {
       type: 'tasks',
       title: 'Amaliyot mashqlari',
       tasks: [

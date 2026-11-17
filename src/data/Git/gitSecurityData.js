@@ -70,6 +70,34 @@ updates:
       rule: 'Public repoga yuklangan kalit bir necha daqiqada avtomatik skanerlar tomonidan topilishi mumkin — darhol almashtiring.'
     },
     {
+      type: 'quiz',
+      title: "Bilimingizni sinab ko'ring",
+      questions: [
+        {
+          q: 'Akkauntni himoya qilishning eng muhim qadamlaridan biri?',
+          options: [
+          'Parolni hammaga aytish',
+          'Ikki bosqichli autentifikatsiya (2FA) ni yoqish',
+          "Profilni o'chirish",
+          'Token muddatini cheksiz qilish'
+          ],
+          answer: 1,
+          explain: '2FA parol ochilib ketsa ham akkauntni himoya qiladi.'
+        },
+        {
+          q: 'Dependabot nima qiladi?',
+          options: [
+          'Zaif kutubxonalarni aniqlab, yangilash uchun PR ochadi',
+          'Kodni formatlaydi',
+          'Rasmlarni siqadi',
+          'Parol yaratadi'
+          ],
+          answer: 0,
+          explain: "Dependabot kutubxonalardagi ma'lum zaifliklarni topadi va yangilashni taklif qiladi."
+        }
+      ]
+    },
+    {
       type: 'tasks',
       title: 'Amaliyot mashqlari',
       tasks: [

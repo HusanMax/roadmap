@@ -68,6 +68,34 @@ git commit -m "Kirish formasidagi xato tuzatildi. Fixes #12"`
       rule: 'Boshqa odam README ni o\'qib, loyihani 5 daqiqada ishga tushira olishi kerak.'
     },
     {
+      type: 'quiz',
+      title: "Bilimingizni sinab ko'ring",
+      questions: [
+        {
+          q: 'GitHub Flow da kod main ga qanday tushadi?',
+          options: [
+          "To'g'ridan-to'g'ri push bilan",
+          'Branch → commit → pull request → review → merge',
+          'Faqat zip fayl orqali',
+          'Email orqali'
+          ],
+          answer: 1,
+          explain: "Har bir ish alohida branch da bajarilib, PR orqali ko'rib chiqilgach birlashtiriladi."
+        },
+        {
+          q: "Xatoni yoki g'oyani kuzatib borish uchun GitHub ning qaysi bo'limidan foydalaniladi?",
+          options: [
+          'Issues',
+          'Releases',
+          'Packages',
+          'Pages'
+          ],
+          answer: 0,
+          explain: "Issues — vazifa, xato va takliflar ro'yxati."
+        }
+      ]
+    },
+    {
       type: 'tasks',
       title: 'Amaliyot mashqlari',
       tasks: [

@@ -58,6 +58,45 @@ init.defaultbranch=main`
       ]
     },
     {
+      type: 'quiz',
+      title: "Bilimingizni sinab ko'ring",
+      questions: [
+        {
+          q: "Git va GitHub o'rtasidagi asosiy farq nima?",
+          options: [
+          'Ular bir xil narsa',
+          'Git — kompyuteringizdagi dastur, GitHub — internetdagi xizmat',
+          'GitHub — kod muharriri, Git — brauzer',
+          'Git faqat Windows uchun'
+          ],
+          answer: 1,
+          explain: 'Git versiyalarni lokal boshqaradi, GitHub esa Git repozitoriyalarni bulutda saqlab, hamkorlik imkonini beradi.'
+        },
+        {
+          q: "Git da faylning to'rtta joyidan to'g'ri tartib qaysi?",
+          options: [
+          'Remote → Staging → Working → Local',
+          'Working directory → Staging → Local repo → Remote',
+          'Local repo → Working → Remote → Staging',
+          'Staging → Working → Remote → Local'
+          ],
+          answer: 1,
+          explain: "Fayl tahrirlanadi (working), add bilan staging ga, commit bilan lokal repoga, push bilan GitHub ga o'tadi."
+        },
+        {
+          q: "Siz Git ni birinchi marta o'rnatdingiz. Commit larda ismingiz ko'rinishi uchun nima qilasiz?",
+          options: [
+          'git config --global user.name "Ismingiz"',
+          'git name set Ismingiz',
+          'git init --name',
+          "Hech narsa, o'zi aniqlaydi"
+          ],
+          answer: 0,
+          explain: 'user.name va user.email bir marta sozlanadi va har bir commit ga yoziladi.'
+        }
+      ]
+    },
+    {
       type: 'tasks',
       title: 'Amaliyot mashqlari',
       tasks: [

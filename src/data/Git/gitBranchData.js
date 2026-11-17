@@ -69,6 +69,45 @@ Deleted branch feature/login (was 8e4c7d0).`
       rule: 'Har bir vazifa uchun alohida branch oching va u kichik bo\'lsin — tekshirish va birlashtirish oson bo\'ladi.'
     },
     {
+      type: 'quiz',
+      title: "Bilimingizni sinab ko'ring",
+      questions: [
+        {
+          q: "Yangi branch yaratib, darhol unga o'tish buyrug'i?",
+          options: [
+          'git branch -d x',
+          'git switch -c x',
+          'git merge x',
+          'git checkout main'
+          ],
+          answer: 1,
+          explain: "git switch -c nom — yaratadi va o'tadi."
+        },
+        {
+          q: "Siz feature branch da ishladingiz, main da yangi commit yo'q. Merge qilsangiz nima bo'ladi?",
+          options: [
+          'Conflict',
+          'Fast-forward: yangi merge commit yaratilmaydi',
+          "Barcha commit lar o'chadi",
+          'Xato chiqadi'
+          ],
+          answer: 1,
+          explain: "main oldinga siljiydi, tarix to'g'ri chiziq bo'lib qoladi."
+        },
+        {
+          q: 'Qaysi vaziyatda conflict chiqadi?',
+          options: [
+          "Ikki branch da bir xil qator turlicha o'zgarganda",
+          'Yangi fayl yaratilganda',
+          "Branch nomi uzun bo'lganda",
+          'Hech qachon'
+          ],
+          answer: 0,
+          explain: 'Git qaysi variantni qoldirishni bila olmaydi — siz tanlaysiz.'
+        }
+      ]
+    },
+    {
       type: 'tasks',
       title: 'Amaliyot mashqlari',
       tasks: [

@@ -67,6 +67,34 @@ jobs:
       rule: 'Ish beruvchilar ko\'pincha avval GitHub profilingizga qaraydi — uni tartibli saqlang.'
     },
     {
+      type: 'quiz',
+      title: "Bilimingizni sinab ko'ring",
+      questions: [
+        {
+          q: 'Release uchun versiyani belgilashda nima ishlatiladi?',
+          options: [
+          'git tag v1.0.0',
+          'git label',
+          'git stamp',
+          'git version'
+          ],
+          answer: 0,
+          explain: "Tag ma'lum commit ga o'zgarmas nom beradi."
+        },
+        {
+          q: 'GitHub Actions nima qiladi?',
+          options: [
+          'Rasmlarni tahrirlaydi',
+          'Push yoki PR da test, build va deploy ni avtomatik ishga tushiradi',
+          'Parolni saqlaydi',
+          'Kodni yozib beradi'
+          ],
+          answer: 1,
+          explain: 'Actions — CI/CD avtomatlashtirish vositasi.'
+        }
+      ]
+    },
+    {
       type: 'tasks',
       title: 'Amaliyot mashqlari',
       tasks: [

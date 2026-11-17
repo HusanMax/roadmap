@@ -88,6 +88,56 @@ dist/
       rule: 'Kalit tasodifan commit bo\'lsa, uni faqat o\'chirish yetmaydi: tarixda qoladi, kalitni almashtiring.'
     },
     {
+      type: 'quiz',
+      title: "Bilimingizni sinab ko'ring",
+      questions: [
+        {
+          q: "Fayllarni commit ga tayyorlash (staging ga qo'shish) buyrug'i qaysi?",
+          options: [
+          'git save',
+          'git add',
+          'git push',
+          'git stage-all'
+          ],
+          answer: 1,
+          explain: "git add o'zgarishlarni staging area ga qo'shadi; keyin git commit bilan saqlanadi."
+        },
+        {
+          q: "Hozir qaysi fayllar o'zgargani va nima staging da ekanini ko'rish uchun?",
+          options: [
+          'git log',
+          'git status',
+          'git diff --all',
+          'git show'
+          ],
+          answer: 1,
+          explain: "git status ish papkasi va staging holatini ko'rsatadi."
+        },
+        {
+          q: 'Qaysi faylni commit qilmaslik kerak?',
+          options: [
+          'README.md',
+          'src/App.jsx',
+          '.env (parollar bor)',
+          'package.json'
+          ],
+          answer: 2,
+          explain: ".env da kalit va parollar bo'ladi — ularni .gitignore ga qo'shing."
+        },
+        {
+          q: 'Yaxshi commit xabari qaysi?',
+          options: [
+          'fix',
+          'asdf',
+          "Login formasiga validatsiya qo'shildi",
+          "o'zgarishlar"
+          ],
+          answer: 2,
+          explain: 'Xabar nima qilinganini aniq va qisqa aytishi kerak.'
+        }
+      ]
+    },
+    {
       type: 'tasks',
       title: 'Amaliyot mashqlari',
       tasks: [

@@ -76,6 +76,45 @@ stash@{0}: WIP on feature/x: 7c1d4e2 Navbar qo'shildi`
       rule: 'Shubha bo\'lsa, avval branch nusxasini oling: git branch zaxira.'
     },
     {
+      type: 'quiz',
+      title: "Bilimingizni sinab ko'ring",
+      questions: [
+        {
+          q: 'Push qilingan commit ni xavfsiz bekor qilish uchun?',
+          options: [
+          'git reset --hard',
+          'git revert',
+          'git clean',
+          'git stash'
+          ],
+          answer: 1,
+          explain: "revert bekor qiluvchi yangi commit yaratadi — tarix o'zgarmaydi, jamoa uchun xavfsiz."
+        },
+        {
+          q: "Yarim ishni commit qilmasdan boshqa branch ga o'tish kerak. Nima qilasiz?",
+          options: [
+          'git stash',
+          'git reset',
+          'git revert',
+          "Faylni o'chirasiz"
+          ],
+          answer: 0,
+          explain: "git stash o'zgarishlarni vaqtincha yashiradi, git stash pop qaytaradi."
+        },
+        {
+          q: 'Merge paytida conflict chiqdi, lekin hal qilishni xohlamayapsiz. Qanday bekor qilasiz?',
+          options: [
+          'git merge --abort',
+          'git delete',
+          'git push --force',
+          "Papkani o'chirish"
+          ],
+          answer: 0,
+          explain: 'merge --abort birlashtirishdan oldingi holatga qaytaradi.'
+        }
+      ]
+    },
+    {
       type: 'tasks',
       title: 'Amaliyot mashqlari',
       tasks: [

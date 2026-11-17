@@ -53,6 +53,23 @@ git clean -n                        # kuzatilmayotgan fayllar (oldin ko'rib chiq
 git config --global alias.st status # qisqa buyruq: git st`
     },
     {
+      type: 'quiz',
+      title: "Bilimingizni sinab ko'ring",
+      questions: [
+        {
+          q: 'Terminaldan GitHub bilan ishlash vositasi qaysi?',
+          options: [
+          'gh (GitHub CLI)',
+          'gitlab',
+          'ghostty',
+          'npm'
+          ],
+          answer: 0,
+          explain: 'gh pr create, gh repo clone kabi buyruqlar bilan brauzersiz ishlash mumkin.'
+        }
+      ]
+    },
+    {
       type: 'tasks',
       title: 'Amaliyot mashqlari',
       tasks: [
