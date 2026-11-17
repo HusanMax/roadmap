@@ -82,6 +82,12 @@ export const semanticHtmlData = {
       rule: 'Avval ma\'noni o\'ylang, keyin ko\'rinishni: "Bu nima?" degan savolga mos teg tanlang.'
     },
     {
+      type: 'visual',
+      visual: 'semantic',
+      title: "Sahifa maketini vizual ko'rish",
+      text: "Qutilarni bosib, har bir semantik tegning vazifasini ko'ring."
+    },
+    {
       type: 'tasks',
       title: 'Amaliyot mashqlari',
       tasks: [
