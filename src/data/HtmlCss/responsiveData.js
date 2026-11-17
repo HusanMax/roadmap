@@ -92,6 +92,39 @@ h1 { font-size: clamp(1.8rem, 5vw, 3rem); }
       text: "Sliderni suring: breakpoint larda maket qanday o'zgaradi."
     },
     {
+      type: 'challenge',
+      lang: 'css',
+      title: 'Mini vazifa: mobil va kompyuter uchun maket',
+      story: "Do'kon sayti telefonda bitta ustunda, kengligi 600px dan katta ekranlarda esa 3 ta ustunda ko'rinishi kerak.",
+      task: "Media query yozing: min-width: 600px bo'lganda .products 3 ustunli bo'lsin (asosiy holat 1 ustun).",
+      html: `<style>.products div{background:#10b981;color:#fff;padding:24px;border-radius:8px;text-align:center}</style><div class="products"><div>Mahsulot 1</div><div>Mahsulot 2</div><div>Mahsulot 3</div></div>`,
+      starter: `.products {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+/* media query qo'shing */
+`,
+      tests: [
+        { name: '@media (min-width: 600px) yozilgan', expr: "Array.from(document.styleSheets).some(function(s){return Array.from(s.cssRules).some(function(r){return r.media && /min-width:\\s*600px/.test(r.media.mediaText);});})" },
+        { name: "Keng ekranda .products 3 ustunli bo'ladi", expr: "(function(){ var ok=false; Array.from(document.styleSheets).forEach(function(s){ Array.from(s.cssRules).forEach(function(r){ if(r.media && /min-width:\\s*600px/.test(r.media.mediaText)){ Array.from(r.cssRules).forEach(function(q){ var g=q.style && q.style.gridTemplateColumns; if(q.selectorText==='.products' && g && (/repeat\\(\\s*3/.test(g) || g.trim().split(/\\s+/).length===3)) ok=true; }); } }); }); return ok; })()" },
+        { name: 'Asosiy holatda 1 ustun qoladi', expr: "Array.from(document.styleSheets).some(function(s){return Array.from(s.cssRules).some(function(r){return r.selectorText==='.products' && /^1fr$/.test(r.style.gridTemplateColumns.trim());});})" }
+      ],
+      hint: '@media (min-width: 600px) { .products { grid-template-columns: repeat(3, 1fr); } }',
+      solution: `.products {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 600px) {
+  .products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}`
+    },
+    {
       type: 'tasks',
       title: 'Amaliyot mashqlari',
       tasks: [
