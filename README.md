@@ -38,6 +38,10 @@ Har bir `data/<Yo'nalish>/` papkasida `AllData.js` bor — u shu yo'nalishdagi b
 
 ## O'zgarishlar tarixi
 
+### 2026-11-17 (vizual tushuntirishlar)
+- **Qo'shildi:** `src/components/visuals/` — interaktiv demolar: Box Model, Flexbox, Grid, Position, Responsive, Transition/Animation, DOM daraxti, semantik maket va CSS selektorlar o'yinchog'i.
+- **Qo'shildi:** mavzu ma'lumotida `{ type: 'visual', visual: 'flexbox' }` bo'limi — nom `VisualBlock.jsx` dagi ro'yxatdan olinadi.
+
 ### 2026-11-17 (HTML / CSS yo'nalishi)
 - **Qo'shildi:** `src/data/HtmlCss/` — 10 ta mavzu: HTML asoslari, matn/havola/rasm/ro'yxat, jadval va formalar, semantik HTML, CSS asoslari, Box Model, Flexbox, Grid, responsive dizayn, position/transition/animation.
 - **Qo'shildi:** `HtmlCssPage.jsx` va `TopicTemplate` da to'q sariq `html` mavzusi; roadmapdagi "HTML / CSS" tugmasi endi sahifani ochadi.
