@@ -70,6 +70,12 @@ export const htmlBasicsData = {
       rule: 'Kodni tartibli yozing: har bir ichki element uchun 2 ta bo\'sh joy (indent) qoldiring.'
     },
     {
+      type: 'visual',
+      visual: 'htmlTree',
+      title: "DOM daraxti: HTML kodi brauzerda qanday daraxtga aylanadi",
+      text: "Brauzer HTML ni o'qib, elementlardan iborat daraxt (DOM) yaratadi. Ichma-ich joylashgan elementlar ota-bola munosabatida bo'ladi."
+    },
+    {
       type: 'tasks',
       title: 'Amaliyot mashqlari',
       tasks: [
