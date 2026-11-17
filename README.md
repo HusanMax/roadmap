@@ -37,7 +37,7 @@ Har bir `data/<Yo'nalish>/` papkasida `AllData.js` bor — u shu yo'nalishdagi b
 ## O'zgarishlar tarixi
 
 ### 2026-11-17 (kod bloklari)
-- **Qo'shildi:** `src/components/CodeBlock.jsx` — misol kodlar endi VS Code (Dark+) uslubida: sintaksis ranglari (`prism-react-renderer`), qator raqamlari, sarlavha paneli, til nomi va "nusxalash" tugmasi. Til (JS/TS/SQL/Terminal/HTML/JSON) kod matniga qarab avtomatik aniqlanadi; kerak bo'lsa mavzu ma'lumotida `lang: 'sql'` deb berish mumkin.
+- **Qo'shildi:** `src/components/CodeBlock.jsx` — misol kodlar endi VS Code (Dark+) uslubida: yorqin sintaksis ranglari (`prism-react-renderer`, o'zimiz sozlagan Dark+ mavzusi), qator raqamlari, sarlavha paneli, til nomi va "nusxalash" tugmasi. Til (JS/TS/SQL/Terminal/HTML/JSON) kod matniga qarab avtomatik aniqlanadi; kerak bo'lsa mavzu ma'lumotida `lang: 'sql'` deb berish mumkin.
 - **O'zgardi:** `TopicTemplate.jsx` dagi eski regex asosidagi bo'yash olib tashlandi, o'rniga `CodeBlock` ishlatiladi.
 
 ### 2026-11-17

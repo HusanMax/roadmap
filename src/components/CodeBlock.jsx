@@ -2,7 +2,25 @@ import React, { useState } from 'react';
 import { Box, IconButton, Tooltip } from '@mui/material';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import CheckIcon from '@mui/icons-material/Check';
-import { Highlight, themes } from 'prism-react-renderer';
+import { Highlight } from 'prism-react-renderer';
+
+// VS Code Dark+ ranglari, yorqinroq qilib sozlangan
+const brightTheme = {
+  plain: { color: '#f3f3f3', backgroundColor: '#1e1e1e' },
+  styles: [
+    { types: ['comment', 'prolog', 'doctype', 'cdata'], style: { color: '#7ec36b', fontStyle: 'italic' } },
+    { types: ['punctuation', 'operator'], style: { color: '#f0f0f0' } },
+    { types: ['keyword', 'atrule', 'important'], style: { color: '#6cb6ff', fontWeight: 'bold' } },
+    { types: ['control', 'module', 'directive'], style: { color: '#e08cf0', fontWeight: 'bold' } },
+    { types: ['string', 'char', 'attr-value', 'template-string', 'regex', 'url'], style: { color: '#ffa07a' } },
+    { types: ['number', 'boolean', 'constant', 'symbol'], style: { color: '#d4f0b0' } },
+    { types: ['function', 'method'], style: { color: '#ffee9c' } },
+    { types: ['class-name', 'builtin', 'maybe-class-name', 'tag'], style: { color: '#5eead4' } },
+    { types: ['variable', 'property', 'attr-name', 'parameter', 'selector'], style: { color: '#b6e6ff' } },
+    { types: ['inserted'], style: { color: '#b5f0a0' } },
+    { types: ['deleted'], style: { color: '#ff9a9a' } },
+  ],
+};
 
 // Kod matniga qarab tilni aniqlaydi (ma'lumot fayllarida til ko'rsatilmagan)
 function detectLanguage(code, lang) {
@@ -50,12 +68,12 @@ export default function CodeBlock({ code, lang }) {
         </Tooltip>
       </Box>
 
-      <Highlight theme={themes.vsDark} code={source} language={language}>
+      <Highlight theme={brightTheme} code={source} language={language}>
         {({ tokens, getLineProps, getTokenProps }) => (
-          <Box component="pre" sx={{ m: 0, p: 2, overflowX: 'auto', fontFamily: '"Fira Code", Consolas, "Courier New", monospace', fontSize: '0.98rem', lineHeight: 1.6, background: '#1e1e1e' }}>
+          <Box component="pre" sx={{ m: 0, p: 2, overflowX: 'auto', fontFamily: '"Fira Code", Consolas, "Courier New", monospace', fontSize: '1.08rem', lineHeight: 1.6, background: '#1e1e1e' }}>
             {tokens.map((line, i) => (
               <div key={i} {...getLineProps({ line })} style={{ display: 'flex' }}>
-                <span style={{ width: '2.2em', flexShrink: 0, textAlign: 'right', paddingRight: '1.2em', color: '#858585', userSelect: 'none' }}>{i + 1}</span>
+                <span style={{ width: '2.2em', flexShrink: 0, textAlign: 'right', paddingRight: '1.2em', color: '#9aa0a6', userSelect: 'none' }}>{i + 1}</span>
                 <span style={{ whiteSpace: 'pre' }}>
                   {line.map((token, k) => <span key={k} {...getTokenProps({ token })} />)}
                   {line.length === 1 && line[0].content === '' ? ' ' : null}
