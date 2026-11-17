@@ -35,7 +35,7 @@ function detectLanguage(code, lang) {
   return 'jsx';
 }
 
-const LABELS = { jsx: 'JavaScript', tsx: 'TypeScript', sql: 'SQL', bash: 'Terminal', markup: 'HTML', json: 'JSON', css: 'CSS' };
+const LABELS = { jsx: 'JavaScript', tsx: 'TypeScript', sql: 'SQL', bash: 'Terminal', markup: 'HTML', json: 'JSON', css: 'CSS', yaml: 'YAML' };
 
 export default function CodeBlock({ code, lang }) {
   const [copied, setCopied] = useState(false);
