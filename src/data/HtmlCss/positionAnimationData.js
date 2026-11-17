@@ -122,6 +122,18 @@ export const positionAnimationData = {
       rule: 'prefers-reduced-motion media query bilan animatsiyani yoqtirmaydigan foydalanuvchilar uchun o\'chirib qo\'ying.'
     },
     {
+      type: 'visual',
+      visual: 'position',
+      title: "Position — vizual tushuntirish",
+      text: "position qiymatini tanlab, element qayerga borishini ko'ring."
+    },
+    {
+      type: 'visual',
+      visual: 'transition',
+      title: "Transition va Animation — jonli",
+      text: "Davomiylik va tezlikni o'zgartirib, animatsiyani o'zingiz boshqaring."
+    },
+    {
       type: 'tasks',
       title: 'Amaliyot mashqlari',
       tasks: [
