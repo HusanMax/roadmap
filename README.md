@@ -19,12 +19,14 @@ src/
 │   ├── RoadmapMain.jsx      # bosh sahifa (yo'nalishlar ro'yxati)
 │   └── TopicTemplate.jsx    # mavzu uchun umumiy shablon
 ├── pages/                   # har bir yo'nalish uchun sahifa
+│   ├── HtmlCssPage.jsx
 │   ├── JavaScriptPage.jsx
 │   ├── NodeJsPage.jsx
 │   ├── NestJsPage.jsx
 │   ├── PostgreSQLPage.jsx
 │   └── ReactReduxPage.jsx
 └── data/                    # mavzu ma'lumotlari (yo'nalish bo'yicha papkalar)
+    ├── HtmlCss/
     ├── JavaScript/
     ├── NodeJS/
     ├── NestJS/
@@ -36,6 +38,10 @@ Har bir `data/<Yo'nalish>/` papkasida `AllData.js` bor — u shu yo'nalishdagi b
 
 ## O'zgarishlar tarixi
 
+### 2026-11-17 (HTML / CSS yo'nalishi)
+- **Qo'shildi:** `src/data/HtmlCss/` — 10 ta mavzu: HTML asoslari, matn/havola/rasm/ro'yxat, jadval va formalar, semantik HTML, CSS asoslari, Box Model, Flexbox, Grid, responsive dizayn, position/transition/animation.
+- **Qo'shildi:** `HtmlCssPage.jsx` va `TopicTemplate` da to'q sariq `html` mavzusi; roadmapdagi "HTML / CSS" tugmasi endi sahifani ochadi.
+
 ### 2026-11-17 (kod bloklari)
 - **Qo'shildi:** `src/components/CodeBlock.jsx` — misol kodlar endi VS Code (Dark+) uslubida: yorqin sintaksis ranglari (`prism-react-renderer`, o'zimiz sozlagan Dark+ mavzusi), qator raqamlari, sarlavha paneli, til nomi va "nusxalash" tugmasi. Til (JS/TS/SQL/Terminal/HTML/JSON) kod matniga qarab avtomatik aniqlanadi; kerak bo'lsa mavzu ma'lumotida `lang: 'sql'` deb berish mumkin.
 - **O'zgardi:** `TopicTemplate.jsx` dagi eski regex asosidagi bo'yash olib tashlandi, o'rniga `CodeBlock` ishlatiladi.
@@ -45,7 +51,6 @@ Har bir `data/<Yo'nalish>/` papkasida `AllData.js` bor — u shu yo'nalishdagi b
 - **O'zgardi:** `AllNodeData.js` → `AllData.js` — barcha yo'nalishlarda (JavaScript, NestJS, PostgreSQL, ReactRedux) bir xil nom.
 - **O'zgardi:** `NodeJsPage.jsx` dagi import yangi yo'lga moslandi.
 - **Tuzatildi:** `nestjsAuthorizationGuideData.js` va `nestjsDatabaseRelationshipsGuideData.js` dagi sintaksis xatolari (matn ichidagi qo'shtirnoqlar escape qilindi) — oldin `npm run build` shu sabab yiqilardi.
-- **Tozalandi:** matnlardagi `[cite: N]` qoldiq belgilari olib tashlandi (NestJS va localStorage mavzulari) — o'qish osonlashdi.
 - **Qo'shildi:** README — loyiha tuzilmasi va ishga tushirish yo'riqnomasi.
 
 ### Avval qo'shilganlar (1–10-mavzular)
