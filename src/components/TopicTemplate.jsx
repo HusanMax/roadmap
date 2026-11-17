@@ -6,6 +6,52 @@ import CodeBlock from './CodeBlock';
 import VisualBlock from './VisualBlock';
 
 function getThemeColors(theme) {
+  if (theme === 'tailwind') {
+    return {
+      ...getThemeColors('postgres'),
+      primary: '#06b6d4',
+      primaryLight: '#67e8f9',
+      primaryGlow: '#a5f3fc',
+      border: '#06b6d4',
+      bgAccent: 'rgba(6, 182, 212, 0.16)',
+      bgAccentStrong: 'rgba(6, 182, 212, 0.24)',
+      bgRule: 'rgba(6, 182, 212, 0.13)',
+      textPrimary: '#67e8f9',
+      shadow: 'rgba(6, 182, 212, 0.3)',
+      shadowCard: 'rgba(6, 182, 212, 0.12)',
+      truthyBg: 'rgba(6, 182, 212, 0.12)',
+      truthyBorder: '#06b6d4',
+      truthyText: '#67e8f9',
+      taskBorder: '#06b6d4',
+      taskNumBg: '#06b6d4',
+      selectedBg: 'rgba(8, 80, 98, 0.95)',
+      selectedBorder: '#67e8f9',
+      iconColor: '#67e8f9'
+    };
+  }
+  if (theme === 'git') {
+    return {
+      ...getThemeColors('postgres'),
+      primary: '#eab308',
+      primaryLight: '#fde047',
+      primaryGlow: '#fef08a',
+      border: '#eab308',
+      bgAccent: 'rgba(234, 179, 8, 0.16)',
+      bgAccentStrong: 'rgba(234, 179, 8, 0.24)',
+      bgRule: 'rgba(234, 179, 8, 0.13)',
+      textPrimary: '#fde047',
+      shadow: 'rgba(234, 179, 8, 0.3)',
+      shadowCard: 'rgba(234, 179, 8, 0.12)',
+      truthyBg: 'rgba(234, 179, 8, 0.12)',
+      truthyBorder: '#eab308',
+      truthyText: '#fde047',
+      taskBorder: '#eab308',
+      taskNumBg: '#eab308',
+      selectedBg: 'rgba(100, 78, 6, 0.95)',
+      selectedBorder: '#fde047',
+      iconColor: '#fde047'
+    };
+  }
   if (theme === 'html') {
     return {
       ...getThemeColors('postgres'),
