@@ -153,6 +153,34 @@ EXPLAIN ANALYZE
 SELECT * FROM users WHERE email = 'user999999@gmail.com';`
     },
     {
+      type: 'quiz',
+      title: "Bilimingizni sinab ko'ring",
+      questions: [
+        {
+          q: 'INNER JOIN natijasida nima chiqadi?',
+          options: [
+          'Ikkala jadvalda mos kelgan qatorlargina',
+          'Birinchi jadvalning hamma qatori',
+          'Ikkala jadvalning hamma qatori',
+          'Faqat NULL qiymatlar'
+          ],
+          answer: 0,
+          explain: 'INNER JOIN faqat ikkala tomonda mos keluvchi qatorlarni qaytaradi.'
+        },
+        {
+          q: 'FULL JOIN ning farqi nima?',
+          options: [
+          "Hech qanday farq yo'q",
+          "Mos kelmaganlari ham chiqadi (ma'lumot yo'qolmaydi)",
+          'Faqat birinchi jadvalni oladi',
+          "Jadvalni o'chiradi"
+          ],
+          answer: 1,
+          explain: "FULL JOIN ikkala jadvaldagi barcha qatorlarni chiqaradi; mos kelmaganlar NULL bilan to'ldiriladi."
+        }
+      ]
+    },
+    {
       type: 'tasks',
       title: '9. Amaliyot Topshiriqlari',
       tasks: [

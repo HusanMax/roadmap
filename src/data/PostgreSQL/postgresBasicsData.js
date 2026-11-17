@@ -220,6 +220,45 @@ DELETE 1
 ALTER TABLE`,
     },
     {
+      type: 'quiz',
+      title: "Bilimingizni sinab ko'ring",
+      questions: [
+        {
+          q: "Jadvalga yangi qator qo'shish buyrug'i?",
+          options: [
+          'ADD ROW',
+          'INSERT INTO',
+          'PUSH INTO',
+          'CREATE ROW'
+          ],
+          answer: 1,
+          explain: 'INSERT INTO jadval (ustunlar) VALUES (qiymatlar);'
+        },
+        {
+          q: "Faqat 20 yoshdan kattalarni tanlash uchun qaysi kod to'g'ri?",
+          options: [
+          'SELECT * FROM users WHERE age > 20;',
+          'SELECT age > 20 FROM users;',
+          'GET users IF age > 20;',
+          'SELECT * FROM users HAVING 20;'
+          ],
+          answer: 0,
+          explain: 'WHERE sharti qatorlarni filtrlaydi.'
+        },
+        {
+          q: 'DELETE FROM users; (WHERE siz) nima qiladi?',
+          options: [
+          'Hech narsa',
+          "Jadvaldagi BARCHA qatorlarni o'chiradi",
+          "Faqat oxirgi qatorni o'chiradi",
+          "Jadvalning o'zini o'chiradi"
+          ],
+          answer: 1,
+          explain: "WHERE siz DELETE jadvaldagi hamma ma'lumotni olib tashlaydi — ehtiyot bo'ling!"
+        }
+      ]
+    },
+    {
       type: "tasks",
       title: "11. Amaliyot Topshiriqlari",
       tasks: [

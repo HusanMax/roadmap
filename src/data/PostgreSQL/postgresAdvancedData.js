@@ -148,6 +148,34 @@ HAVING COUNT(*) > 2;`,
 (2 rows)`
     },
     {
+      type: 'quiz',
+      title: "Bilimingizni sinab ko'ring",
+      questions: [
+        {
+          q: "Ikki jadvalni bog'lovchi ustun (masalan orders.user_id → users.id) nima deyiladi?",
+          options: [
+          'Primary Key',
+          'Foreign Key',
+          'Unique Key',
+          'Index'
+          ],
+          answer: 1,
+          explain: 'Foreign Key boshqa jadvalning Primary Key iga ishora qiladi.'
+        },
+        {
+          q: "Kategoriya bo'yicha mahsulotlar sonini hisoblash uchun nima ishlatiladi?",
+          options: [
+          'ORDER BY',
+          'GROUP BY + COUNT(*)',
+          'LIKE',
+          'LIMIT'
+          ],
+          answer: 1,
+          explain: 'GROUP BY qatorlarni guruhlaydi, COUNT(*) esa har bir guruhdagi sonini beradi.'
+        }
+      ]
+    },
+    {
       type: 'tasks',
       title: '8. Amaliyot Topshiriqlari',
       tasks: [
