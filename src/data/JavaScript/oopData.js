@@ -58,6 +58,48 @@ export const oopData = {
       code: 'class User {\n  role = "user";\n  constructor(name) {\n    this.name = name;\n  }\n}\nconst u = new User("Ali");\nconsole.log(u.role);'
     },
     {
+      type: 'challenge',
+      lang: 'js',
+      title: 'Mini vazifa: bank hisobi',
+      story: "Bank dasturida har bir mijozning hisobi bor. Hisobga pul qo'yish va yechish mumkin, lekin balansdan ortiq yechib bo'lmaydi.",
+      task: "Hisob klassini to'ldiring: deposit(summa) balansga qo'shsin, withdraw(summa) yetarli mablag' bo'lsa ayirsin va true, bo'lmasa false qaytarsin.",
+      starter: `class Hisob {
+  constructor(egasi, balans = 0) {
+    this.egasi = egasi;
+    this.balans = balans;
+  }
+
+  deposit(summa) {
+    // balansga qo'shing
+  }
+
+  withdraw(summa) {
+    // yetarli bo'lsa ayiring va true qaytaring, aks holda false
+  }
+}
+
+const h = new Hisob("Ali", 1000);
+h.deposit(500);
+console.log(h.balans);`,
+      tests: [
+        { name: 'deposit(500) dan keyin 1500', expr: "(function(){const x=new Hisob('A',1000); x.deposit(500); return x.balans===1500;})()" },
+        { name: 'withdraw(300) → true va 700', expr: "(function(){const x=new Hisob('A',1000); return x.withdraw(300)===true && x.balans===700;})()" },
+        { name: "ortiqcha yechish → false, balans o'zgarmaydi", expr: "(function(){const x=new Hisob('A',100); return x.withdraw(500)===false && x.balans===100;})()" }
+      ],
+      hint: 'withdraw ichida: if (summa <= this.balans) { this.balans -= summa; return true; } return false;',
+      solution: `deposit(summa) {
+  this.balans += summa;
+}
+
+withdraw(summa) {
+  if (summa <= this.balans) {
+    this.balans -= summa;
+    return true;
+  }
+  return false;
+}`
+    },
+    {
       type: 'tasks',
       title: '9. Amaliy Mashqlar',
       tasks: [
