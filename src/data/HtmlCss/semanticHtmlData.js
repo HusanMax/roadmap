@@ -88,6 +88,52 @@ export const semanticHtmlData = {
       text: "Qutilarni bosib, har bir semantik tegning vazifasini ko'ring."
     },
     {
+      type: 'challenge',
+      lang: 'html',
+      title: 'Mini vazifa: blog sahifasi maketi',
+      story: 'Blog sahifasi faqat div lardan yozilgan va qidiruv tizimlari uni yaxshi tushunmayapti. Uni semantik teglar bilan qayta yozing.',
+      task: 'header (ichida nav), main (ichida article), aside va footer teglaridan foydalanib maket yarating.',
+      starter: `<!-- Semantik maketni yozing -->
+`,
+      tests: [
+        { name: 'header bor', expr: "!!document.querySelector('header')" },
+        { name: 'nav header ichida', expr: "!!document.querySelector('header nav')" },
+        { name: 'main ichida article', expr: "!!document.querySelector('main article')" },
+        { name: 'aside bor', expr: "!!document.querySelector('aside')" },
+        { name: 'footer bor', expr: "!!document.querySelector('footer')" }
+      ],
+      hint: 'Tuzilma: <header><nav>…</nav></header><main><article>…</article></main><aside>…</aside><footer>…</footer>',
+      solution: `<header>
+  <h1>Mening blogim</h1>
+  <nav><a href="#">Bosh</a> <a href="#">Maqolalar</a></nav>
+</header>
+<main>
+  <article>
+    <h2>Birinchi maqola</h2>
+    <p>Maqola matni...</p>
+  </article>
+</main>
+<aside>Tegishli maqolalar</aside>
+<footer>© 2026</footer>`
+    },
+    {
+      type: 'quiz',
+      title: "Bilimingizni sinab ko'ring",
+      questions: [
+        {
+          q: 'Sahifaning asosiy mazmuni uchun qaysi teg ishlatiladi (sahifada bitta)?',
+          options: [
+          '<div>',
+          '<main>',
+          '<section>',
+          '<span>'
+          ],
+          answer: 1,
+          explain: '<main> sahifaning asosiy tarkibini bildiradi.'
+        }
+      ]
+    },
+    {
       type: 'tasks',
       title: 'Amaliyot mashqlari',
       tasks: [
