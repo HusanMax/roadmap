@@ -65,6 +65,42 @@ export const numbersData = {
       code: 'setTimeout(function () {\n  console.log("2 sekund o\'tdi");\n}, 2000);'
     },
     {
+      type: 'challenge',
+      lang: 'js',
+      title: 'Mini vazifa: ism formatlash',
+      story: "Ro'yxatdan o'tish formasida foydalanuvchilar ismini turlicha yozadi: '  aLI  ', 'VALI'. Bazaga chiroyli shaklda saqlash kerak.",
+      task: "formatIsm(ism) funksiyasini yozing: bo'shliqlarni olib tashlab, birinchi harfni katta, qolganini kichik qilib qaytarsin ('  aLI ' → 'Ali').",
+      starter: `function formatIsm(ism) {
+  // trim, toUpperCase, toLowerCase, slice dan foydalaning
+}
+
+console.log(formatIsm("  aLI  "));`,
+      tests: [
+        { name: "'  aLI ' → 'Ali'", expr: "formatIsm('  aLI ') === 'Ali'" },
+        { name: "'VALI' → 'Vali'", expr: "formatIsm('VALI') === 'Vali'" },
+        { name: "'hASAN' → 'Hasan'", expr: "formatIsm('hASAN') === 'Hasan'" }
+      ],
+      hint: 'ism.trim() dan keyin: ism[0].toUpperCase() + ism.slice(1).toLowerCase().',
+      solution: `function formatIsm(ism) {
+  const toza = ism.trim();
+  return toza[0].toUpperCase() + toza.slice(1).toLowerCase();
+}`
+    },
+    {
+      type: 'playground',
+      lang: 'js',
+      title: 'Tajriba: sonlar va matn',
+      text: "Sonni yaxlitlash va matn metodlarini sinab ko'ring.",
+      code: `const narx = 12345.6789;
+console.log(narx.toFixed(2));
+console.log(Math.round(narx), Math.floor(narx), Math.ceil(narx));
+
+const gap = "  JavaScript — qiziqarli  ";
+console.log(gap.trim().toUpperCase());
+console.log(gap.includes("qiziqarli"));
+console.log("a,b,c".split(","));`
+    },
+    {
       type: 'tasks',
       title: '10. Amaliyot Topshiriqlari',
       tasks: [
