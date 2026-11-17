@@ -94,6 +94,23 @@ function Button({ color, children }) {
 /* <div class="bg-(--brand-color)"> */`
     },
     {
+      type: 'quiz',
+      title: "Bilimingizni sinab ko'ring",
+      questions: [
+        {
+          q: 'Nima uchun className={`bg-${color}-600`} ishlamaydi?',
+          options: [
+          "Tailwind to'liq class nomini kodda topa olmaydi",
+          "React qo'llab-quvvatlamaydi",
+          "color so'zi taqiqlangan",
+          'Faqat vite da ishlamaydi'
+          ],
+          answer: 0,
+          explain: "Tailwind kodni matn sifatida o'qiydi; to'liq nom (bg-blue-600) yozilgan bo'lishi kerak."
+        }
+      ]
+    },
+    {
       type: 'tasks',
       title: 'Amaliyot mashqlari',
       tasks: [

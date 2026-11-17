@@ -69,6 +69,34 @@ export default defineConfig({
       ]
     },
     {
+      type: 'quiz',
+      title: "Bilimingizni sinab ko'ring",
+      questions: [
+        {
+          q: 'Tailwind v4 ni CSS faylga ulash uchun qaysi qator yoziladi?',
+          options: [
+          '@import "tailwindcss";',
+          '@tailwind all;',
+          'import tailwind',
+          '@use tailwind'
+          ],
+          answer: 0,
+          explain: 'v4 da bitta @import qatori yetarli.'
+        },
+        {
+          q: "Tailwind ning asosiy g'oyasi nima?",
+          options: [
+          'Tayyor komponentlar (button, navbar)',
+          "Kichik utility class larni elementga to'g'ridan-to'g'ri yozish",
+          'Faqat JS bilan bezash',
+          'Alohida CSS faylni majburiy qilish'
+          ],
+          answer: 1,
+          explain: 'Utility-first: p-4, text-center, bg-sky-500 kabi kichik class lar.'
+        }
+      ]
+    },
+    {
       type: 'tasks',
       title: 'Amaliyot mashqlari',
       tasks: [
