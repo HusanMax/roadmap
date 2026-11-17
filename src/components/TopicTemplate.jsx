@@ -293,7 +293,7 @@ export default function TopicTemplate({ module, theme = 'default' }) {
           {sec.type === 'visual' && <VisualBlock name={sec.visual} accent={c.primary} />}
 
           {sec.type === 'code' && (
-            <CodeBlock code={sec.code} lang={sec.lang} />
+            <CodeBlock code={sec.code} lang={sec.lang} output={sec.output} html={sec.html} preview={sec.preview !== false} tailwind={!!module.tailwind} />
           )}
 
           {sec.type === 'falsyTruthy' && (
