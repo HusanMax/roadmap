@@ -138,6 +138,64 @@ export const positionAnimationData = {
       text: "Davomiylik va tezlikni o'zgartirib, animatsiyani o'zingiz boshqaring."
     },
     {
+      type: 'challenge',
+      lang: 'css',
+      title: "Mini vazifa: 'Yangi' belgisi",
+      story: "Mahsulot kartochkasining o'ng yuqori burchagida 'Yangi' belgisi chiqishi kerak.",
+      task: 'Kartochkani position: relative, belgini esa position: absolute qilib, top: 10px va right: 10px joylashtiring.',
+      html: `<div class="card"><span class="badge">Yangi</span><h3>Naushnik</h3><p>350 000 so'm</p></div>`,
+      starter: `.card {
+
+}
+
+.badge {
+
+}
+`,
+      tests: [
+        { name: '.card relative', expr: "getComputedStyle(document.querySelector('.card')).position === 'relative'" },
+        { name: '.badge absolute', expr: "getComputedStyle(document.querySelector('.badge')).position === 'absolute'" },
+        { name: 'top 10px', expr: "getComputedStyle(document.querySelector('.badge')).top === '10px'" },
+        { name: 'right 10px', expr: "getComputedStyle(document.querySelector('.badge')).right === '10px'" }
+      ],
+      hint: 'Ota element (.card) ga position: relative, belgiga position: absolute; top: 10px; right: 10px;',
+      solution: `.card {
+  position: relative;
+  padding: 30px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+}
+.badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #e44d26;
+  color: #fff;
+  padding: 2px 10px;
+  border-radius: 999px;
+}`
+    },
+    {
+      type: 'playground',
+      lang: 'css',
+      title: 'Tajriba: hover animatsiyasi',
+      text: "transition va transform qiymatlarini o'zgartirib, tugma ustiga sichqonchani keltiring.",
+      html: `<div style="padding:30px"><button class="btn">Ustimga keling</button></div>`,
+      code: `.btn {
+  background: #e44d26;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(228, 77, 38, 0.4);
+}`
+    },
+    {
       type: 'tasks',
       title: 'Amaliyot mashqlari',
       tasks: [
