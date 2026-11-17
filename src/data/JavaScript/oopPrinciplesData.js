@@ -73,6 +73,39 @@ export const oopPrinciplesData = {
       code: 'const Logger = {\n  log(msg) {\n    console.log(msg);\n  }\n}\nclass UserService {\n  addUser(name) {\n    this.log("User added: " + name);\n  }\n}\nObject.assign(UserService.prototype, Logger);\nconst service = new UserService();\nservice.addUser("Ali");'
     },
     {
+      type: 'challenge',
+      lang: 'js',
+      title: "Mini vazifa: hayvonlar merosxo'rligi",
+      story: "Hayvonxona dasturida barcha hayvonlar umumiy Hayvon klassidan meros oladi, lekin har biri o'zicha ovoz chiqaradi.",
+      task: 'Mushuk klassini Hayvon dan extends bilan yarating va ovoz() metodini "Miyov" qaytaradigan qilib qayta yozing (override).',
+      starter: `class Hayvon {
+  constructor(nom) {
+    this.nom = nom;
+  }
+  ovoz() {
+    return "Noma'lum ovoz";
+  }
+  tanishtir() {
+    return this.nom + ": " + this.ovoz();
+  }
+}
+
+// Mushuk klassini yozing
+
+console.log(new Hayvon("Hayvon").tanishtir());`,
+      tests: [
+        { name: 'Mushuk Hayvon dan meros oladi', expr: "new Mushuk('Barsik') instanceof Hayvon" },
+        { name: "ovoz() 'Miyov' qaytaradi", expr: "new Mushuk('Barsik').ovoz() === 'Miyov'" },
+        { name: "tanishtir() → 'Barsik: Miyov'", expr: "new Mushuk('Barsik').tanishtir() === 'Barsik: Miyov'" }
+      ],
+      hint: "class Mushuk extends Hayvon { ovoz() { return 'Miyov'; } }",
+      solution: `class Mushuk extends Hayvon {
+  ovoz() {
+    return "Miyov";
+  }
+}`
+    },
+    {
       type: 'tasks',
       title: '11. Amaliy mashqlar',
       tasks: [
