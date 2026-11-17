@@ -5,6 +5,29 @@ import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import CodeBlock from './CodeBlock';
 
 function getThemeColors(theme) {
+  if (theme === 'html') {
+    return {
+      ...getThemeColors('postgres'),
+      primary: '#e44d26',
+      primaryLight: '#ff7a50',
+      primaryGlow: '#ffb199',
+      border: '#e44d26',
+      bgAccent: 'rgba(228, 77, 38, 0.16)',
+      bgAccentStrong: 'rgba(228, 77, 38, 0.24)',
+      bgRule: 'rgba(228, 77, 38, 0.13)',
+      textPrimary: '#ffb199',
+      shadow: 'rgba(228, 77, 38, 0.3)',
+      shadowCard: 'rgba(228, 77, 38, 0.12)',
+      truthyBg: 'rgba(228, 77, 38, 0.12)',
+      truthyBorder: '#e44d26',
+      truthyText: '#ffd2c4',
+      taskBorder: '#e44d26',
+      taskNumBg: '#e44d26',
+      selectedBg: 'rgba(120, 38, 18, 0.95)',
+      selectedBorder: '#ffb199',
+      iconColor: '#ffb199'
+    };
+  }
   if (theme === 'react') {
     return {
       primary: '#764abc',
