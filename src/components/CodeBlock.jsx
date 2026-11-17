@@ -3,6 +3,7 @@ import { Box, IconButton, Tooltip } from '@mui/material';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import CheckIcon from '@mui/icons-material/Check';
 import { Highlight } from 'prism-react-renderer';
+import { StaticOutput, JsOutput, HtmlPreview, canRun, canPreviewHtml } from './CodeOutput';
 
 // VS Code Dark+ ranglari, yorqinroq qilib sozlangan
 const brightTheme = {
@@ -37,7 +38,7 @@ function detectLanguage(code, lang) {
 
 const LABELS = { jsx: 'JavaScript', tsx: 'TypeScript', sql: 'SQL', bash: 'Terminal', markup: 'HTML', json: 'JSON', css: 'CSS', yaml: 'YAML' };
 
-export default function CodeBlock({ code, lang }) {
+export default function CodeBlock({ code, lang, output, html, preview = true, tailwind = false }) {
   const [copied, setCopied] = useState(false);
   const source = code.replace(/\n+$/, '');
   const language = detectLanguage(source, lang);
@@ -83,6 +84,13 @@ export default function CodeBlock({ code, lang }) {
           </Box>
         )}
       </Highlight>
+
+      {/* Natija: qo'lda berilgan > HTML/CSS ko'rinishi > JavaScript ni ishga tushirish */}
+      {output ? <StaticOutput text={output} />
+        : language === 'css' && html ? <HtmlPreview html={html} css={source} />
+        : language === 'markup' && preview && canPreviewHtml(source) ? <HtmlPreview html={source} tailwind={tailwind} />
+        : (language === 'jsx' || language === 'tsx') && preview && canRun(source) ? <JsOutput code={source} />
+        : null}
     </Box>
   );
 }
