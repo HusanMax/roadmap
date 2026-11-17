@@ -3,6 +3,7 @@ import { Box, Typography, Paper, Grid } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import CodeBlock from './CodeBlock';
+import VisualBlock from './VisualBlock';
 
 function getThemeColors(theme) {
   if (theme === 'html') {
@@ -242,6 +243,8 @@ export default function TopicTemplate({ module, theme = 'default' }) {
               </Paper>
             </>
           )}
+
+          {sec.type === 'visual' && <VisualBlock name={sec.visual} accent={c.primary} />}
 
           {sec.type === 'code' && (
             <CodeBlock code={sec.code} lang={sec.lang} />
