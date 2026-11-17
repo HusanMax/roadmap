@@ -85,6 +85,12 @@ img { max-width: 100%; height: auto; } /* rasm sig'maydi — kichrayadi */`
       rule: 'Brauzerda F12 (DevTools) ni oching: Box Model diagrammasi har bir qatlamni rang bilan ko\'rsatadi.'
     },
     {
+      type: 'visual',
+      visual: 'boxModel',
+      title: "Box Model — jonli diagramma",
+      text: "Sliderlarni suring: padding, border va margin elementning umumiy o'lchamiga qanday ta'sir qilishini ko'ring."
+    },
+    {
       type: 'tasks',
       title: 'Amaliyot mashqlari',
       tasks: [
