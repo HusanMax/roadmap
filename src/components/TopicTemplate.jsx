@@ -4,6 +4,8 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import CodeBlock from './CodeBlock';
 import VisualBlock from './VisualBlock';
+import LiveCode from './LiveCode';
+import Quiz from './Quiz';
 
 function getThemeColors(theme) {
   if (theme === 'tailwind') {
@@ -289,6 +291,12 @@ export default function TopicTemplate({ module, theme = 'default' }) {
               </Paper>
             </>
           )}
+
+          {(sec.type === 'challenge' || sec.type === 'playground') && (
+            <LiveCode key={module.id + idx} sec={sec} accent={c.primary} tailwind={!!module.tailwind} storageKey={module.id + ':' + idx} />
+          )}
+
+          {sec.type === 'quiz' && <Quiz key={module.id + idx} sec={sec} accent={c.primary} />}
 
           {sec.type === 'visual' && <VisualBlock name={sec.visual} accent={c.primary} />}
 
