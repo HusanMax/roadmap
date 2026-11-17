@@ -1,5 +1,6 @@
 export const twTypographyEffectsData = {
   id: 'tw-typography-effects',
+  tailwind: true,
   title: '7. Matn, fon, gradient va effektlar',
   heading: 'Tailwind: matn, fon, chegara, gradient va filtrlar',
   subheading: 'Hujjatning Typography, Backgrounds, Borders, Effects va Filters bo\'limlaridagi eng ko\'p kerak bo\'ladigan class lar.',

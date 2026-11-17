@@ -1,5 +1,6 @@
 export const twCustomizeData = {
   id: 'tw-customize',
+  tailwind: true,
   title: '5. Sozlash: tema, @apply, animatsiya',
   heading: 'Tailwind ni o\'zingizga moslash',
   subheading: 'Ranglar, shriftlar, o\'z class lar va animatsiyalar bilan ishlash.',

@@ -1,5 +1,6 @@
 export const twCoreConceptsData = {
   id: 'tw-core-concepts',
+  tailwind: true,
   title: '9. Asosiy tushunchalar va v3 → v4',
   heading: 'Tailwind ning ishlash tamoyillari',
   subheading: 'Preflight, class lar qanday topiladi, dinamik class xatosi va eski versiyadan o\'tish.',

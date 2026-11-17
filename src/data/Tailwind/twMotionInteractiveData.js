@@ -1,5 +1,6 @@
 export const twMotionInteractiveData = {
   id: 'tw-motion-interactive',
+  tailwind: true,
   title: '8. Transition, transform va interaktivlik',
   heading: 'Tailwind: animatsiya, transform va interaktivlik',
   subheading: 'Silliq o\'tish, siljitish, burish va kursor, scroll, tanlash kabi interaktiv sozlamalar.',

@@ -1,5 +1,6 @@
 export const twLayoutData = {
   id: 'tw-layout',
+  tailwind: true,
   title: '3. Flex va Grid',
   heading: 'Tailwind da maket: Flex va Grid',
   subheading: 'Flexbox va Grid xususiyatlari oddiy class lar bilan.',

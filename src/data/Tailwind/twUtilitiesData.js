@@ -1,5 +1,6 @@
 export const twUtilitiesData = {
   id: 'tw-utilities',
+  tailwind: true,
   title: '2. Utility class lar: o\'lcham, rang, matn',
   heading: 'Asosiy utility class lar',
   subheading: 'Spacing, o\'lcham, rang, shrift va chegara bilan ishlash.',

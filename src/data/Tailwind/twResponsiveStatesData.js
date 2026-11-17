@@ -1,5 +1,6 @@
 export const twResponsiveStatesData = {
   id: 'tw-responsive-states',
+  tailwind: true,
   title: '4. Responsive, hover va dark mode',
   heading: 'Variantlar: responsive, holatlar va qorong\'u rejim',
   subheading: 'Class oldiga prefiks qo\'yib, faqat ma\'lum sharoitda ishlashini belgilash.',

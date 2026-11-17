@@ -1,5 +1,6 @@
 export const twProjectsData = {
   id: 'tw-projects',
+  tailwind: true,
   title: '6. Amaliy komponentlar va React',
   heading: 'Tailwind bilan tayyor komponentlar',
   subheading: 'Navbar, kartochka, forma va React komponentlarida ishlatish.',

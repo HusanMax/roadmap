@@ -1,5 +1,6 @@
 export const twIntroData = {
   id: 'tw-intro',
+  tailwind: true,
   title: '1. Tailwind nima va o\'rnatish',
   heading: 'Tailwind CSS: kirish va o\'rnatish',
   subheading: 'Utility-first CSS framework: stilni HTML ichidagi tayyor class lar bilan yozish.',
