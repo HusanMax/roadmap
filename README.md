@@ -36,6 +36,10 @@ Har bir `data/<Yo'nalish>/` papkasida `AllData.js` bor — u shu yo'nalishdagi b
 
 ## O'zgarishlar tarixi
 
+### 2026-11-17 (kod bloklari)
+- **Qo'shildi:** `src/components/CodeBlock.jsx` — misol kodlar endi VS Code (Dark+) uslubida: sintaksis ranglari (`prism-react-renderer`), qator raqamlari, sarlavha paneli, til nomi va "nusxalash" tugmasi. Til (JS/TS/SQL/Terminal/HTML/JSON) kod matniga qarab avtomatik aniqlanadi; kerak bo'lsa mavzu ma'lumotida `lang: 'sql'` deb berish mumkin.
+- **O'zgardi:** `TopicTemplate.jsx` dagi eski regex asosidagi bo'yash olib tashlandi, o'rniga `CodeBlock` ishlatiladi.
+
 ### 2026-11-17
 - **O'zgardi:** `src/data/Node.js/` papkasi `src/data/NodeJS/` deb qayta nomlandi (nuqtali papka nomi import/yo'l muammolarini keltirib chiqarardi).
 - **O'zgardi:** `AllNodeData.js` → `AllData.js` — barcha yo'nalishlarda (JavaScript, NestJS, PostgreSQL, ReactRedux) bir xil nom.

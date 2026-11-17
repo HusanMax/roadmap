@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Typography, Paper, Grid } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
+import CodeBlock from './CodeBlock';
 
 function getThemeColors(theme) {
   if (theme === 'react') {
@@ -132,30 +133,6 @@ function getThemeColors(theme) {
   };
 }
 
-function renderCodeLine(line) {
-  let escaped = line
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;');
-
-  if (escaped.trim().startsWith('//')) {
-    return `<span style="color: #6a9955; font-style: italic;">${escaped}</span>`;
-  }
-
-  escaped = escaped.replace(/(['"`])(.*?)\1/g, '<span style="color: #ce9178;">$1$2$1</span>');
-  escaped = escaped.replace(/\b(\d+)\b/g, '<span style="color: #b5cea8;">$1</span>');
-
-  const keywords = ['let', 'const', 'var', 'for', 'in', 'of', 'switch', 'case', 'break', 'default', 'if', 'else', 'do', 'while', 'return', 'function', 'import', 'export', 'from', 'as', 'async', 'await', 'try', 'catch', 'finally', 'throw', 'class', 'extends', 'implements', 'interface', 'type', 'enum', 'namespace', 'declare', 'abstract', 'readonly', 'public', 'private', 'protected', 'static', 'super', 'new', 'this', 'typeof', 'instanceof', 'keyof', 'infer', 'satisfies', 'delete', 'void', 'yield'];
-  const kwRegex = new RegExp(`\\b(${keywords.join('|')})\\b`, 'g');
-  escaped = escaped.replace(kwRegex, '<span style="color: #c586c0; font-weight: bold;">$1</span>');
-
-  const methods = ['console', 'log', 'fetch', 'then', 'json', 'axios', 'JSON', 'parse', 'stringify', 'setItem', 'getItem', 'removeItem', 'parseInt', 'Number', 'alert', 'prompt', 'confirm', 'map', 'filter', 'reduce', 'find', 'includes', 'join', 'split', 'slice', 'splice', 'push', 'length', 'useState', 'useEffect', 'useContext', 'useRef', 'useMemo', 'useCallback', 'useReducer', 'useLayoutEffect', 'createContext', 'createSlice', 'createAsyncThunk', 'configureStore', 'createStore', 'combineReducers', 'applyMiddleware', 'useSelector', 'useDispatch', 'useNavigate', 'useParams', 'useSearchParams', 'useQuery', 'useMutation', 'useQueryClient', 'useTranslation', 'forwardRef', 'memo', 'lazy', 'Suspense', 'Fragment', 'Provider', 'Link', 'Navigate', 'Outlet', 'NavLink', 'Routes', 'Route', 'BrowserRouter'];
-  const mRegex = new RegExp(`\\b(${methods.join('|')})\\b`, 'g');
-  escaped = escaped.replace(mRegex, '<span style="color: #4ec9b0;">$1</span>');
-
-  return escaped;
-}
-
 export default function TopicTemplate({ module, theme = 'default' }) {
   if (!module) return null;
 
@@ -244,30 +221,7 @@ export default function TopicTemplate({ module, theme = 'default' }) {
           )}
 
           {sec.type === 'code' && (
-            <Box component="pre" sx={{ 
-              background: '#1e1e1e', 
-              color: '#d4d4d4', 
-              fontFamily: 'Fira Code, Consolas, "Courier New", monospace', 
-              p: 2.5, 
-              borderRadius: '12px', 
-              overflowX: 'auto', 
-              border: '1px solid #333', 
-              my: 2, 
-              fontSize: '1.05rem',
-              boxShadow: '0 4px 15px rgba(0,0,0,0.6)',
-              lineHeight: 1.6
-            }}>
-              <code>
-                {sec.code.split('\n').map((line, i) => (
-                  <Typography 
-                    component="div" 
-                    key={i} 
-                    dangerouslySetInnerHTML={{ __html: renderCodeLine(line) || '&nbsp;' }}
-                    sx={{ fontFamily: 'inherit', fontSize: 'inherit', whiteSpace: 'pre' }}
-                  />
-                ))}
-              </code>
-            </Box>
+            <CodeBlock code={sec.code} lang={sec.lang} />
           )}
 
           {sec.type === 'falsyTruthy' && (
