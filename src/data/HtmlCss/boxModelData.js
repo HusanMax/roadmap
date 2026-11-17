@@ -93,6 +93,51 @@ img { max-width: 100%; height: auto; } /* rasm sig'maydi — kichrayadi */`
       text: "Sliderlarni suring: padding, border va margin elementning umumiy o'lchamiga qanday ta'sir qilishini ko'ring."
     },
     {
+      type: 'challenge',
+      lang: 'css',
+      title: 'Mini vazifa: mahsulot kartochkasi',
+      story: "Dizayner mahsulot kartochkasi maketini yubordi: kenglik 300px (padding va border bilan birga), ichki bo'shliq 20px, 2px chegara, 12px yumaloq burchak.",
+      task: 'box-sizing: border-box dan foydalanib .card ga shu stillarni bering.',
+      html: `<div class="card"><h3>iPhone 15</h3><p>12 000 000 so'm</p></div>`,
+      starter: `/* .card uchun stil yozing */
+.card {
+
+}
+`,
+      tests: [
+        { name: 'width 300px', expr: "getComputedStyle(document.querySelector('.card')).width === '300px'" },
+        { name: 'box-sizing border-box', expr: "getComputedStyle(document.querySelector('.card')).boxSizing === 'border-box'" },
+        { name: 'padding 20px', expr: "getComputedStyle(document.querySelector('.card')).paddingTop === '20px'" },
+        { name: 'border 2px', expr: "getComputedStyle(document.querySelector('.card')).borderTopWidth === '2px'" },
+        { name: 'border-radius 12px', expr: "getComputedStyle(document.querySelector('.card')).borderTopLeftRadius === '12px'" }
+      ],
+      hint: 'box-sizing: border-box; width: 300px; padding: 20px; border: 2px solid #ccc; border-radius: 12px;',
+      solution: `.card {
+  box-sizing: border-box;
+  width: 300px;
+  padding: 20px;
+  border: 2px solid #cbd5e1;
+  border-radius: 12px;
+}`
+    },
+    {
+      type: 'quiz',
+      title: "Bilimingizni sinab ko'ring",
+      questions: [
+        {
+          q: 'Box model qatlamlari ichkaridan tashqariga qaysi tartibda?',
+          options: [
+          'content → padding → border → margin',
+          'margin → border → padding → content',
+          'content → margin → padding → border',
+          'padding → content → border → margin'
+          ],
+          answer: 0,
+          explain: "Kontent, ichki bo'shliq (padding), chegara (border), tashqi bo'shliq (margin)."
+        }
+      ]
+    },
+    {
       type: 'tasks',
       title: 'Amaliyot mashqlari',
       tasks: [
