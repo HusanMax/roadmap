@@ -113,6 +113,12 @@ a {
       rule: 'Asosan class selektorlardan foydalaning: ular oddiy, qayta ishlatiladi va boshqarish oson.'
     },
     {
+      type: 'visual',
+      visual: 'selectors',
+      title: "Selektorlar o'yinchog'i",
+      text: "Selektorni yozing yoki tugmalardan tanlang: mos kelgan elementlar sahifada qizil ramka bilan yoritiladi."
+    },
+    {
       type: 'tasks',
       title: 'Amaliyot mashqlari',
       tasks: [
