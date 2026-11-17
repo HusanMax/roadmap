@@ -59,6 +59,24 @@ export const twUtilitiesData = {
       rule: 'Raqam ko\'paygan sari o\'lcham ham ko\'payadi: 4 → 16px, 8 → 32px, 16 → 64px.'
     },
     {
+      type: 'challenge',
+      lang: 'html',
+      title: 'Mini vazifa: tugma yasash',
+      story: "Dizayner Tailwind bilan 'Savatga qo'shish' tugmasini so'radi: ko'k fon, oq matn, yumaloq burchak, ichki bo'shliq (gorizontal 16px, vertikal 8px), qalin matn.",
+      task: 'Quyidagi tugmaga Tailwind class larni yozing.',
+      starter: `<button class="">Savatga qo'shish</button>`,
+      tests: [
+        { name: "bg-sky-500 yoki ko'k fon class i", expr: "/bg-(sky|blue|indigo)-\\d{3}/.test(document.querySelector('button').className)" },
+        { name: 'text-white', expr: "document.querySelector('button').classList.contains('text-white')" },
+        { name: 'px-4 (16px)', expr: "getComputedStyle(document.querySelector('button')).paddingLeft === '16px'" },
+        { name: 'py-2 (8px)', expr: "getComputedStyle(document.querySelector('button')).paddingTop === '8px'" },
+        { name: 'yumaloq burchak', expr: "/rounded/.test(document.querySelector('button').className)" },
+        { name: 'font-bold yoki font-semibold', expr: "/font-(bold|semibold)/.test(document.querySelector('button').className)" }
+      ],
+      hint: 'bg-sky-500 text-white px-4 py-2 rounded-lg font-semibold',
+      solution: `<button class="bg-sky-500 text-white px-4 py-2 rounded-lg font-semibold">Savatga qo'shish</button>`
+    },
+    {
       type: 'tasks',
       title: 'Amaliyot mashqlari',
       tasks: [
