@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Box, IconButton, Tooltip } from '@mui/material';
 import ReplayIcon from '@mui/icons-material/Replay';
+import { runJs } from './sandbox';
 
 // ---------- Umumiy "Natija" paneli ----------
 function OutputFrame({ label, children, onReplay }) {
@@ -66,80 +67,15 @@ function canRun(code) {
   }
 }
 
-const runnerScript = (id, code) => `
-<script>
-(function(){
-  var id=${JSON.stringify(id)};
-  function send(t,m){ parent.postMessage({__viz:id,t:t,m:m},'*'); }
-  function q(s){ return "'" + s + "'"; }
-  function fmt(v,d,top){
-    d=d||0;
-    if(typeof v==='string') return top? v : q(v);
-    if(v===null) return 'null';
-    if(v===undefined) return 'undefined';
-    if(typeof v==='function') return '[Function: '+(v.name||'anonymous')+']';
-    if(typeof v==='bigint') return v+'n';
-    if(typeof v==='symbol') return v.toString();
-    if(typeof v!=='object') return String(v);
-    if(v instanceof Error) return v.name+': '+v.message;
-    if(v instanceof Date) return v.toISOString();
-    if(d>2) return Array.isArray(v)?'[Array]':'[Object]';
-    if(Array.isArray(v)){ if(!v.length) return '[]'; return '[ '+v.map(function(x){return fmt(x,d+1);}).join(', ')+' ]'; }
-    if(v instanceof Map){ return 'Map('+v.size+') { '+Array.from(v.entries()).map(function(e){return fmt(e[0],d+1)+' => '+fmt(e[1],d+1);}).join(', ')+' }'; }
-    if(v instanceof Set){ return 'Set('+v.size+') { '+Array.from(v.values()).map(function(x){return fmt(x,d+1);}).join(', ')+' }'; }
-    var keys=Object.keys(v);
-    if(!keys.length) return '{}';
-    return '{ '+keys.map(function(k){return k+': '+fmt(v[k],d+1);}).join(', ')+' }';
-  }
-  function out(t){ return function(){ send(t, Array.prototype.map.call(arguments,function(a){return fmt(a,0,true);}).join(' ')); }; }
-  console.log=console.info=console.debug=out('log');
-  console.warn=out('warn');
-  console.error=out('error');
-  console.table=function(x){ send('log', fmt(x,0,true)); };
-  window.alert=function(m){ send('log','alert: '+m); };
-  (async function(){
-    try {
-      await (async function(){
-${code.replace(/<\/script/gi, '<\\/script')}
-      })();
-    } catch(e) { send('exc', String(e && e.message || e)); }
-    setTimeout(function(){ send('done'); }, 700);
-  })();
-})();
-<\/script>`;
-
 export function JsOutput({ code: original }) {
   const { code, auto } = prepare(original);
   const [lines, setLines] = useState(null);
   const [run, setRun] = useState(0);
-  const id = useRef('v' + Math.random().toString(36).slice(2));
 
   useEffect(() => {
-    const collected = [];
-    let failed = false;
-    const frame = document.createElement('iframe');
-    frame.setAttribute('sandbox', 'allow-scripts');
-    frame.style.display = 'none';
-
-    const finish = () => {
-      window.removeEventListener('message', onMsg);
-      clearTimeout(kill);
-      frame.remove();
-      setLines(failed ? null : collected);
-    };
-    const onMsg = (e) => {
-      const d = e.data;
-      if (e.source !== frame.contentWindow || !d || d.__viz !== id.current) return;
-      if (d.t === 'done') finish();
-      else if (d.t === 'exc') failed = true;
-      else collected.push({ t: d.t, m: d.m });
-    };
-    window.addEventListener('message', onMsg);
-    const kill = setTimeout(finish, 3000);
-    frame.srcdoc = `<!doctype html><html><body>${runnerScript(id.current, code)}</body></html>`;
-    document.body.appendChild(frame);
-
-    return () => { window.removeEventListener('message', onMsg); clearTimeout(kill); frame.remove(); };
+    let alive = true;
+    runJs(code).then((r) => { if (alive) setLines(r.error ? null : r.logs); });
+    return () => { alive = false; };
   }, [code, run]);
 
   if (!lines || lines.length === 0) return null;

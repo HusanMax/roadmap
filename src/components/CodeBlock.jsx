@@ -6,7 +6,7 @@ import { Highlight } from 'prism-react-renderer';
 import { StaticOutput, JsOutput, HtmlPreview, canRun, canPreviewHtml } from './CodeOutput';
 
 // VS Code Dark+ ranglari, yorqinroq qilib sozlangan
-const brightTheme = {
+export const brightTheme = {
   plain: { color: '#f3f3f3', backgroundColor: '#1e1e1e' },
   styles: [
     { types: ['comment', 'prolog', 'doctype', 'cdata'], style: { color: '#7ec36b', fontStyle: 'italic' } },
