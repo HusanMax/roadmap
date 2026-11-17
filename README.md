@@ -26,17 +26,26 @@ src/
 │   ├── PostgreSQLPage.jsx
 │   └── ReactReduxPage.jsx
 └── data/                    # mavzu ma'lumotlari (yo'nalish bo'yicha papkalar)
+    ├── Git/
     ├── HtmlCss/
     ├── JavaScript/
     ├── NodeJS/
     ├── NestJS/
     ├── PostgreSQL/
-    └── ReactRedux/
+    ├── ReactRedux/
+    └── Tailwind/
 ```
 
 Har bir `data/<Yo'nalish>/` papkasida `AllData.js` bor — u shu yo'nalishdagi barcha mavzu fayllarini bitta ro'yxatga yig'adi va sahifaga uzatadi. Yangi mavzu qo'shish: mavzu faylini shu papkaga yarating va `AllData.js` ga qo'shing.
 
 ## O'zgarishlar tarixi
+
+### 2026-11-17 (Tailwind CSS va Git & GitHub)
+- **O'zgardi:** roadmapda "Express.js" o'rniga **Tailwind CSS**, "MongoDB" o'rniga **Git & GitHub** qo'yildi. (Express va MongoDB/Mongoose mavzulari Node.js sahifasida saqlanib qoladi.)
+- **Qo'shildi:** `src/data/Tailwind/` — 9 mavzu (o'rnatish, utility class lar, Flex/Grid, responsive va holatlar, sozlash, komponentlar, matn/gradient/effektlar, animatsiya, asosiy tushunchalar va v3→v4). Tailwind v4 asosida yozilgan.
+- **Qo'shildi:** `src/data/Git/` — 10 mavzu (Git asoslari, buyruqlar, branch, GitHub, PR, conflict, workflow, GitHub Flow, xavfsizlik, gh CLI).
+- **Qo'shildi:** `TopicPage.jsx` — tayyor mavzu ro'yxati uchun umumiy sahifa; yangi vizual demolar: Tailwind o'yinchog'i, Git fayl joylari va commit/branch grafigi.
+- Manbalar: https://tailwindcss.com/docs va https://docs.github.com/en — mavzular o'z so'zlarim bilan yozilgan, har biri oxirida hujjat havolalari bor.
 
 ### 2026-11-17 (MDN asosida kengaytirish)
 - **Qo'shildi:** HTML/CSS yo'nalishiga 11–18-mavzular — MDN o'quv dasturidagi yetishmayotgan qismlar: `<head>` va matn teglari, video/audio/SVG/iframe, accessibility va ARIA, atribut/pseudo/combinator selektorlari, cascade va specificity, qiymatlar va o'lchamlar, fon/gradient/soya/filtr, forma-jadval bezash va DevTools.
