@@ -99,6 +99,81 @@ export const flexboxData = {
       text: "Xususiyatlarni o'zgartiring va elementlar qanday joylashishini jonli kuzating."
     },
     {
+      type: 'challenge',
+      lang: 'css',
+      title: 'Mini vazifa: navbar yasash',
+      story: "Saytingiz tepasida navigatsiya paneli kerak: logo chap tomonda, havolalar o'ng tomonda, hammasi vertikal o'rtada.",
+      task: "Flexbox yordamida .navbar ni to'g'ri joylashtiring, havolalar orasiga 20px masofa bering.",
+      html: `<nav class="navbar"><div class="logo">MyLogo</div><div class="links"><a href="#">Bosh</a><a href="#">Haqida</a><a href="#">Aloqa</a></div></nav>`,
+      starter: `/* flexbox yozing */
+.navbar {
+
+}
+
+.links {
+
+}
+`,
+      tests: [
+        { name: '.navbar display: flex', expr: "getComputedStyle(document.querySelector('.navbar')).display === 'flex'" },
+        { name: 'justify-content: space-between', expr: "getComputedStyle(document.querySelector('.navbar')).justifyContent === 'space-between'" },
+        { name: 'align-items: center', expr: "getComputedStyle(document.querySelector('.navbar')).alignItems === 'center'" },
+        { name: '.links ham flex', expr: "getComputedStyle(document.querySelector('.links')).display === 'flex'" },
+        { name: 'havolalar orasi 20px', expr: "getComputedStyle(document.querySelector('.links')).columnGap === '20px'" }
+      ],
+      hint: 'Ikkala konteynerga display: flex bering; .links ga gap: 20px.',
+      solution: `.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: #1f2937;
+  color: #fff;
+}
+.links {
+  display: flex;
+  gap: 20px;
+}`
+    },
+    {
+      type: 'playground',
+      lang: 'css',
+      title: 'Tajriba: Flexbox ni boshqaring',
+      text: "justify-content va align-items qiymatlarini o'zgartirib, elementlar joylashuvini kuzating.",
+      html: `<div class="box"><div class="item">1</div><div class="item">2</div><div class="item">3</div></div>`,
+      code: `.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  height: 160px;
+  background: #0f172a;
+}
+.item {
+  background: #e44d26;
+  color: #fff;
+  padding: 14px 20px;
+  border-radius: 8px;
+}`
+    },
+    {
+      type: 'quiz',
+      title: "Bilimingizni sinab ko'ring",
+      questions: [
+        {
+          q: "Flex elementlarni asosiy o'q bo'ylab o'rtaga qo'yadigan xususiyat?",
+          options: [
+          'align-items: center',
+          'justify-content: center',
+          'text-align: center',
+          'flex-wrap: center'
+          ],
+          answer: 1,
+          explain: "justify-content asosiy o'q bo'ylab, align-items esa ko'ndalang o'q bo'ylab tekislaydi."
+        }
+      ]
+    },
+    {
       type: 'tasks',
       title: 'Amaliyot mashqlari',
       tasks: [
