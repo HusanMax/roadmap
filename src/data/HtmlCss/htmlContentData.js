@@ -81,6 +81,38 @@ export const htmlContentData = {
       ]
     },
     {
+      type: 'challenge',
+      lang: 'html',
+      title: 'Mini vazifa: ovqat retsepti sahifasi',
+      story: 'Oshxona blogida palov retseptini joylashtirmoqchisiz: sarlavha, rasm, masalliqlar va tayyorlash qadamlari.',
+      task: 'h2 sarlavha, alt matnli img, masalliqlar uchun ul (kamida 3 ta li), qadamlar uchun ol (kamida 3 ta li) va a havola yarating.',
+      starter: `<!-- Retsept sahifasini yozing -->
+`,
+      tests: [
+        { name: 'h2 sarlavha bor', expr: "!!document.querySelector('h2')" },
+        { name: 'img da alt matni bor', expr: "(function(){var i=document.querySelector('img'); return !!i && i.getAttribute('alt') && i.getAttribute('alt').trim().length>0;})()" },
+        { name: 'ul da kamida 3 ta li', expr: "document.querySelectorAll('ul li').length >= 3" },
+        { name: 'ol da kamida 3 ta li', expr: "document.querySelectorAll('ol li').length >= 3" },
+        { name: 'a havola va href bor', expr: "!!document.querySelector('a[href]')" }
+      ],
+      hint: '<ul><li>Guruch</li>...</ul> va <ol><li>Piyoz qovuring</li>...</ol> shaklida yozing.',
+      solution: `<h2>Palov retsepti</h2>
+<img src="palov.jpg" alt="Dimlangan palov" width="200">
+<h3>Masalliqlar</h3>
+<ul>
+  <li>Guruch</li>
+  <li>Go'sht</li>
+  <li>Sabzi</li>
+</ul>
+<h3>Tayyorlash</h3>
+<ol>
+  <li>Go'shtni qovuring</li>
+  <li>Sabzi qo'shing</li>
+  <li>Guruchni solib dimlang</li>
+</ol>
+<a href="https://example.com/retseptlar">Boshqa retseptlar</a>`
+    },
+    {
       type: 'tasks',
       title: 'Amaliyot mashqlari',
       tasks: [
