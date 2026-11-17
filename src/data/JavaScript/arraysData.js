@@ -64,6 +64,41 @@ export const arraysData = {
       code: 'const prices = [10, 20, 30];\nconst total = prices.reduce((acc, p) => acc + p, 0); // 60\n// Real hayot: savatdagi mahsulotlarning umumiy narxini hisoblash, statistik hisobotlar.'
     },
     {
+      type: 'challenge',
+      lang: 'js',
+      title: 'Mini vazifa: faol foydalanuvchilar',
+      story: "Admin panelda faqat faol foydalanuvchilarning ismlarini ro'yxat qilib ko'rsatish kerak.",
+      task: "users massividan faqat active: true bo'lganlarni tanlab (filter), ularning ismlarini (map) faolIsmlar massiviga yozing.",
+      starter: `const users = [
+  { name: "Ali", active: true },
+  { name: "Laylo", active: false },
+  { name: "Oybek", active: true },
+  { name: "Dilnoza", active: false }
+];
+
+const faolIsmlar = []; // filter va map bilan to'ldiring
+
+console.log(faolIsmlar);`,
+      tests: [
+        { name: "faolIsmlar = ['Ali', 'Oybek']", expr: "JSON.stringify(faolIsmlar) === JSON.stringify(['Ali','Oybek'])" }
+      ],
+      hint: 'users.filter(u => u.active).map(u => u.name)',
+      solution: `const faolIsmlar = users.filter((u) => u.active).map((u) => u.name);`
+    },
+    {
+      type: 'playground',
+      lang: 'js',
+      title: 'Tajriba: massiv metodlari',
+      text: 'Metodlarni almashtirib, natijani kuzating.',
+      code: `const sonlar = [5, 12, 8, 21, 3];
+
+console.log(sonlar.map(n => n * 2));
+console.log(sonlar.filter(n => n > 7));
+console.log(sonlar.reduce((a, b) => a + b, 0));
+console.log([...sonlar].sort((a, b) => a - b));
+console.log(sonlar.find(n => n > 10));`
+    },
+    {
       type: 'tasks',
       title: '10. Amaliyot Topshiriqlari',
       tasks: [
