@@ -7,12 +7,12 @@ export const nestjsAuthorizationGuideData = {
     {
       type: 'text',
       title: '1. Authentication va Authorization Farqi',
-      text: "Oldingi darslarda foydalanuvchini login qildik, JWT yaratdik va protected route'lar qurdik[cite: 14]. Lekin har bir login qilgan foydalanuvchi hamma API'larni ishlata oladimi? Yo'q[cite: 14].\n• **Authentication** — 'Kim?' degan savolga javob beradi (foydalanuvchini tanib olish)[cite: 14].\n• **Authorization** — 'Nima qilishga ruxsati bor?' degan savolga javob beradi (huquqlarni tekshirish)[cite: 14].\n*Masalan, Instagram misolida: oddiy user faqat post yozadi, admin esa barcha userlarni boshqaradi[cite: 14].*"
+      text: "Oldingi darslarda foydalanuvchini login qildik, JWT yaratdik va protected route'lar qurdik. Lekin har bir login qilgan foydalanuvchi hamma API'larni ishlata oladimi? Yo'q.\n• **Authentication** — 'Kim?' degan savolga javob beradi (foydalanuvchini tanib olish).\n• **Authorization** — 'Nima qilishga ruxsati bor?' degan savolga javob beradi (huquqlarni tekshirish).\n*Masalan, Instagram misolida: oddiy user faqat post yozadi, admin esa barcha userlarni boshqaradi.*"
     },
     {
       type: 'code',
       title: '2. Prisma Schema — Rol Enum va Model',
-      text: "Database ichida rollarni saqlash uchun Enum ishlatamiz. Enum faqat belgilangan qiymatlarga ruxsat beradi (ADMIN va USER)[cite: 15]. Har bir yangi foydalanuvchi avtomatik ravishda USER roli bilan ro'yxatdan o'tadi[cite: 15].",
+      text: "Database ichida rollarni saqlash uchun Enum ishlatamiz. Enum faqat belgilangan qiymatlarga ruxsat beradi (ADMIN va USER). Har bir yangi foydalanuvchi avtomatik ravishda USER roli bilan ro'yxatdan o'tadi.",
       code: `// schema.prisma
 enum Role {
   ADMIN
@@ -30,7 +30,7 @@ model User {
     {
       type: 'code',
       title: '3. JWT ichida Rolni Saqlash',
-      text: "JWT endi nafaqat foydalanuvchini, balki uning huquqlarini ham eslab qolishi uchun `role` ni payload ga qo'shamiz[cite: 16].",
+      text: "JWT endi nafaqat foydalanuvchini, balki uning huquqlarini ham eslab qolishi uchun `role` ni payload ga qo'shamiz.",
       code: `// AuthService ichida token generatsiya qilish:
 generateToken(user: { id: number; email: string; role: Role }) {
   const token = this.jwtService.sign({
@@ -51,7 +51,7 @@ generateToken(user: { id: number; email: string; role: Role }) {
     {
       type: 'code',
       title: '4. Custom Decorator — @Roles() Yaratish',
-      text: "NestJS o'z decoratorimizni yaratish imkonini beradi[cite: 17]. SetMetadata() ma'lumotni route ga yashirin tarzda biriktiradi, keyin esa Guard uni o'qiydi[cite: 17].",
+      text: "NestJS o'z decoratorimizni yaratish imkonini beradi. SetMetadata() ma'lumotni route ga yashirin tarzda biriktiradi, keyin esa Guard uni o'qiydi.",
       code: `// Terminal: nest g decorator auth/roles
 
 // roles.decorator.ts
@@ -60,13 +60,13 @@ import { SetMetadata } from '@nestjs/common';
 export const Roles = (...roles: string[]) => SetMetadata('roles', roles);
 
 // Ishlatilish misollari:
-// @Roles('ADMIN') — faqat ADMIN rolga ega foydalanuvchilar uchun ochiladi[cite: 17].
-// @Roles('USER', 'ADMIN') — bir nechta rol, istalgan biri mos kelsa kifoya[cite: 17].`
+// @Roles('ADMIN') — faqat ADMIN rolga ega foydalanuvchilar uchun ochiladi.
+// @Roles('USER', 'ADMIN') — bir nechta rol, istalgan biri mos kelsa kifoya.`
     },
     {
       type: 'code',
       title: '5. RolesGuard — Rol Bo\'yicha Himoya Qilish',
-      text: "RolesGuard har bir so'rovni tekshiradi: 'Tizimga kirgan foydalanuvchida kerakli ruxsat bormi?'[cite: 18] CanActivate interface yordamida so'rov davom etishi yoki to'xtatilishi hal qilinadi (YES → Controller, NO → 403 Forbidden)[cite: 18].",
+      text: "RolesGuard har bir so'rovni tekshiradi: 'Tizimga kirgan foydalanuvchida kerakli ruxsat bormi?' CanActivate interface yordamida so'rov davom etishi yoki to'xtatilishi hal qilinadi (YES → Controller, NO → 403 Forbidden).",
       code: `// Terminal: nest g guard auth/roles
 
 // roles.guard.ts
@@ -112,12 +112,12 @@ export class RolesGuard implements CanActivate {
     {
       type: 'text',
       title: '6. Reflector — Metadatanı O\'qish Mexanizmi',
-      text: "Reflector — @Roles() decorator orqali route'ga biriktirilgan metadatanâni ('roles' kaliti ostida) o'qib beruvchi NestJS xizmati[cite: 20]. Guard shu ma'lumot va foydalanuvchi rolini solishtiradi[cite: 20]. Oqim: Decorator (@Roles('ADMIN')) → Metadata ('roles') → Reflector (["ADMIN"]) → RolesGuard (Solishtirish)[cite: 20]."
+      text: "Reflector — @Roles() decorator orqali route'ga biriktirilgan metadatanâni ('roles' kaliti ostida) o'qib beruvchi NestJS xizmati. Guard shu ma'lumot va foydalanuvchi rolini solishtiradi. Oqim: Decorator (@Roles('ADMIN')) → Metadata ('roles') → Reflector ([\"ADMIN\"]) → RolesGuard (Solishtirish)."
     },
     {
       type: 'code',
       title: '7. Multiple Guards — JwtAuthGuard + RolesGuard',
-      text: "Route'larda bir nechta guard ishlatish mumkin. Birinchi guard loginni (tokenni) tekshiradi, ikkinchisi esa rol ruxsatini[cite: 22].",
+      text: "Route'larda bir nechta guard ishlatish mumkin. Birinchi guard loginni (tokenni) tekshiradi, ikkinchisi esa rol ruxsatini.",
       code: `// ProductsController misoli:
 @UseGuards(JwtAuthGuard, RolesGuard) // Ketma-ket ishlaydi
 @Roles('ADMIN')
@@ -129,37 +129,37 @@ findAll() {
     {
       type: 'text',
       title: '8. Postman Test va Muhim Eslatma',
-      text: "Postman'da test qilish bosqichlari: Ro'yxatdan o'tish → JWT olish → Himoyalangan API'ga murojaat qilish (rol mos kelmasa 403 Forbidden chiqadi) → Rolni ADMIN qilish[cite: 23].\n*Muhim eslatma: Rolni database'da o'zgartirgandan keyin albatta qayta Login qiling, chunki JWT token hamon eski rolni o'z ichida saqlaydi[cite: 23]!*"
+      text: "Postman'da test qilish bosqichlari: Ro'yxatdan o'tish → JWT olish → Himoyalangan API'ga murojaat qilish (rol mos kelmasa 403 Forbidden chiqadi) → Rolni ADMIN qilish.\n*Muhim eslatma: Rolni database'da o'zgartirgandan keyin albatta qayta Login qiling, chunki JWT token hamon eski rolni o'z ichida saqlaydi!*"
     },
     {
       type: 'comparison',
       title: '9. Yakuniy Xulosa: Authentication vs Authorization',
-      text: "To'liq xavfsizlik arxitekturasi va xulosalar[cite: 24].",
+      text: "To'liq xavfsizlik arxitekturasi va xulosalar.",
       cards: [
         {
           title: 'Authentication',
           subtitle: '"Kim siz?"',
-          desc: "JWT identity'ni saqlaydi, foydalanuvchi tizimga kirganini tasdiqlaydi[cite: 24]."
+          desc: "JWT identity'ni saqlaydi, foydalanuvchi tizimga kirganini tasdiqlaydi."
         },
         {
           title: 'Authorization',
           subtitle: '"Nima qila olasiz?"',
-          desc: "RolesGuard va rollar orqali maxsus huquqlarni tekshiradi[cite: 24]."
+          desc: "RolesGuard va rollar orqali maxsus huquqlarni tekshiradi."
         },
         {
           title: '401 Unauthorized',
           subtitle: 'Token yo\'q yoki yaroqsiz',
-          desc: "Foydalanuvchi tizimga kirmagan yoki token muddati tugagan[cite: 24]."
+          desc: "Foydalanuvchi tizimga kirmagan yoki token muddati tugagan."
         },
         {
           title: '403 Forbidden',
           subtitle: 'Ruxsat yo\'q',
-          desc: "Foydalanuvchi tizimga kirgan, lekin bu amalni bajarishga roli yetmaydi[cite: 24]."
+          desc: "Foydalanuvchi tizimga kirgan, lekin bu amalni bajarishga roli yetmaydi."
         }
       ],
       actionsTitle: 'Natija:',
       actions: [
-        "Endi siz to'liq ishlab chiqarish darajasidagi Authentication + Authorization tizimini qurdindgiz: User'larni ro'yxatdan o'tkazish, hashed parollar bilan login, JWT generatsiya, JwtAuthGuard va RolesGuard + custom decorator yordamida rollar asosida cheklash[cite: 24]."
+        "Endi siz to'liq ishlab chiqarish darajasidagi Authentication + Authorization tizimini qurdindgiz: User'larni ro'yxatdan o'tkazish, hashed parollar bilan login, JWT generatsiya, JwtAuthGuard va RolesGuard + custom decorator yordamida rollar asosida cheklash."
       ]
     }
   ]

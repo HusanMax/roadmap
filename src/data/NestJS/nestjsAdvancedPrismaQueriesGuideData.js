@@ -7,12 +7,12 @@ export const nestjsAdvancedPrismaQueriesGuideData = {
     {
       type: 'text',
       title: '1. Muammo: CRUD Nima Uchun Yetarli Emas?',
-      text: "Agar database'da 500,000 ta mahsulot bo'lsa va `GET /products` barchasini birdan yuklasa, frontend juda sekin ishlaydi[cite: 37]. Amazon va OLX'da ma'lumotlar birdan yuklanmaydi — foydalanuvchi qidiruv (Search), filter (Filter), tartibga solish (Sort) va sahifalash (Pagination) orqali kerakli ma'lumotni oladi[cite: 37]."
+      text: "Agar database'da 500,000 ta mahsulot bo'lsa va `GET /products` barchasini birdan yuklasa, frontend juda sekin ishlaydi. Amazon va OLX'da ma'lumotlar birdan yuklanmaydi — foydalanuvchi qidiruv (Search), filter (Filter), tartibga solish (Sort) va sahifalash (Pagination) orqali kerakli ma'lumotni oladi."
     },
     {
       type: 'code',
       title: '2. Asos: Query Parameters (@Query)',
-      text: "Backend URL orqali qo'shimcha ma'lumot olishi mumkin (masalan: `GET /products?search=iphone`, `GET /products?page=2`, `GET /products?limit=5`)[cite: 38]. Controller'da `@Query()` parametri URL'dagi qiymatlarni avtomatik o'qiydi va Service'ga uzatadi[cite: 38].",
+      text: "Backend URL orqali qo'shimcha ma'lumot olishi mumkin (masalan: `GET /products?search=iphone`, `GET /products?page=2`, `GET /products?limit=5`). Controller'da `@Query()` parametri URL'dagi qiymatlarni avtomatik o'qiydi va Service'ga uzatadi.",
       code: `// Controller misoli:
 @Get()
 getProducts(
@@ -29,7 +29,7 @@ getProducts(
     {
       type: 'code',
       title: '3. Search: where + contains',
-      text: "Prisma `where` yordamida matn bo'yicha filter qiladi[cite: 39]. `contains` matn ichidan qidirishni ta'minlasa, `mode: 'insensitive'` katta-kichik harf farqini yo'qotadi (iPhone = iphone)[cite: 39].",
+      text: "Prisma `where` yordamida matn bo'yicha filter qiladi. `contains` matn ichidan qidirishni ta'minlasa, `mode: 'insensitive'` katta-kichik harf farqini yo'qotadi (iPhone = iphone).",
       code: `// Service ichida qidiruv:
 async getProducts(search?: string) {
   return this.prisma.product.findMany({
@@ -45,12 +45,12 @@ async getProducts(search?: string) {
     {
       type: 'text',
       title: '4. Search Turlari: contains, startsWith va endsWith',
-      text: "• **contains** — matnning istalgan joyidan qidiradi (Pro → MacBook Pro, iPad Pro)[cite: 41].\n• **startsWith** — matn boshidan qidiradi (Mac → MacBook Air, MacBook Pro)[cite: 41].\n• **endsWith** — matn oxiridan qidiradi (Pro → MacBook Pro, iPad Pro)[cite: 41].\n*Qachon qaysi biri? contains umumiy qidiruv uchun, startsWith brend nomi uchun, endsWith esa model yoki kengaytma uchun ishlatiladi[cite: 41].*"
+      text: "• **contains** — matnning istalgan joyidan qidiradi (Pro → MacBook Pro, iPad Pro).\n• **startsWith** — matn boshidan qidiradi (Mac → MacBook Air, MacBook Pro).\n• **endsWith** — matn oxiridan qidiradi (Pro → MacBook Pro, iPad Pro).\n*Qachon qaysi biri? contains umumiy qidiruv uchun, startsWith brend nomi uchun, endsWith esa model yoki kengaytma uchun ishlatiladi.*"
     },
     {
       type: 'code',
       title: '5. Filter: Narx Bo\'yicha Raqamli Filterlar',
-      text: "Foydalanuvchi narx oralig'i bo'yicha filter qilishni xohlaganda `gt`, `gte`, `lt`, `lte` operatorlari ishlatiladi[cite: 44].",
+      text: "Foydalanuvchi narx oralig'i bo'yicha filter qilishni xohlaganda `gt`, `gte`, `lt`, `lte` operatorlari ishlatiladi.",
       code: `// Raqamli operatorlar:
 // gt  — Greater Than (>)
 // gte — Greater or Equal (>=)
@@ -63,27 +63,27 @@ price: {
   lte: maxPrice ? Number(maxPrice) : undefined,
 }
 
-// URL misoli: /products?minPrice=500&maxPrice=1500[cite: 46]`
+// URL misoli: /products?minPrice=500&maxPrice=1500`
     },
     {
       type: 'code',
       title: '6. Sort: Natijalarni Tartibga Solish (orderBy)',
-      text: "Foydalanuvchi mahsulotlarni arzondan qimmatga yoki qimmatdan arzinga qarab saralashini ta'minlash uchun `orderBy` ishlatiladi[cite: 47].",
-      code: `// URL misoli: /products?sort=asc yoki /products?sort=desc[cite: 47]
+      text: "Foydalanuvchi mahsulotlarni arzondan qimmatga yoki qimmatdan arzinga qarab saralashini ta'minlash uchun `orderBy` ishlatiladi.",
+      code: `// URL misoli: /products?sort=asc yoki /products?sort=desc
 
 // Service ichida orderBy:
 orderBy: {
   price: sort === 'desc' ? 'desc' : 'asc',
 }
 
-// asc  — Ascending (Eng arzon → Eng qimmat: 100, 300, 700)[cite: 47]
-// desc — Descending (Eng qimmat → Eng arzon: 1200, 700, 300)[cite: 47]`
+// asc  — Ascending (Eng arzon → Eng qimmat: 100, 300, 700)
+// desc — Descending (Eng qimmat → Eng arzon: 1200, 700, 300)`
     },
     {
       type: 'code',
       title: '7. Pagination: Sahifalash (skip + take)',
-      text: "Professional API hech qachon minglab ma'lumotlarni birdan yubormaydi[cite: 48]. `take` nechta element olinishini, `skip` esa nechta element tashlab yuborilishini belgilaydi[cite: 48].",
-      code: `// URL misoli: /products?page=2&limit=5[cite: 49]
+      text: "Professional API hech qachon minglab ma'lumotlarni birdan yubormaydi. `take` nechta element olinishini, `skip` esa nechta element tashlab yuborilishini belgilaydi.",
+      code: `// URL misoli: /products?page=2&limit=5
 
 const currentPage = Number(page) || 1;
 const take = Number(limit) || 5;
@@ -97,42 +97,42 @@ const products = await this.prisma.product.findMany({
   take,
 });
 
--- page: hozirgi sahifa, limit: har sahifadagi mahsulotlar soni[cite: 48].`
+-- page: hozirgi sahifa, limit: har sahifadagi mahsulotlar soni.`
     },
     {
       type: 'text',
       title: '8. To\'liq Production-Level URL So\'rovi',
-      text: "Barcha texnikalarni bitta so'zda birlashtirish:\n`GET /products?search=iphone&minPrice=500&maxPrice=3000&sort=desc&page=2&limit=5`[cite: 50]\nUshbu so'rov orqali tizim matnni qidiradi, ko'rsatilgan narx oralig'ida filtrlaydi, kamayish tartibida saralaydi va kerakli sahifa natijalarini qaytaradi[cite: 50]."
+      text: "Barcha texnikalarni bitta so'zda birlashtirish:\n`GET /products?search=iphone&minPrice=500&maxPrice=3000&sort=desc&page=2&limit=5`\nUshbu so'rov orqali tizim matnni qidiradi, ko'rsatilgan narx oralig'ida filtrlaydi, kamayish tartibida saralaydi va kerakli sahifa natijalarini qaytaradi."
     },
     {
       type: 'comparison',
       title: '9. Yakuniy Xulosalar va Arxiv',
-      text: "Advanced Prisma Queries bo'yicha asosiy vositalar va xulosalar[cite: 50].",
+      text: "Advanced Prisma Queries bo'yicha asosiy vositalar va xulosalar.",
       cards: [
         {
           title: '@Query()',
           subtitle: 'URL qiymatlari',
-          desc: "Query parametrlarni o'qib Controller'ga uzatadi[cite: 50]."
+          desc: "Query parametrlarni o'qib Controller'ga uzatadi."
         },
         {
           title: 'where + contains',
           subtitle: 'Matnli qidiruv',
-          desc: "Hissiz (insensitive) rejimda matn ichidan qidiradi[cite: 50]."
+          desc: "Hissiz (insensitive) rejimda matn ichidan qidiradi."
         },
         {
           title: 'gt, gte, lt, lte',
           subtitle: 'Raqamli filter',
-          desc: "Narx va boshqa raqamli qiymatlar bo'yicha chegaralaydi[cite: 50]."
+          desc: "Narx va boshqa raqamli qiymatlar bo'yicha chegaralaydi."
         },
         {
           title: 'skip + take',
           subtitle: 'Pagination',
-          desc: "Sahifalash orqali server yuklamasini keskin kamaytiradi[cite: 50]."
+          desc: "Sahifalash orqali server yuklamasini keskin kamaytiradi."
         }
       ],
       actionsTitle: 'Natija:',
       actions: [
-        "Endi siz Amazon, Instagram va Netflix kabi production darajasidagi API'larni bemalol qura olasiz[cite: 50]!"
+        "Endi siz Amazon, Instagram va Netflix kabi production darajasidagi API'larni bemalol qura olasiz!"
       ]
     }
   ]

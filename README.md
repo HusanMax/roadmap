@@ -1,16 +1,52 @@
-# React + Vite
+# Roadmap — o'quv qo'llanma (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Dasturlash mavzulari bo'yicha interaktiv roadmap. Har bir yo'nalish alohida sahifa, mavzular esa `src/data` ichida ma'lumot fayllari sifatida saqlanadi.
 
-Currently, two official plugins are available:
+## Ishga tushirish
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+npm run dev     # development server
+npm run build   # production build
+npm run lint    # oxlint
+```
 
-## React Compiler
+## Loyiha tuzilmasi
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```
+src/
+├── components/
+│   ├── RoadmapMain.jsx      # bosh sahifa (yo'nalishlar ro'yxati)
+│   └── TopicTemplate.jsx    # mavzu uchun umumiy shablon
+├── pages/                   # har bir yo'nalish uchun sahifa
+│   ├── JavaScriptPage.jsx
+│   ├── NodeJsPage.jsx
+│   ├── NestJsPage.jsx
+│   ├── PostgreSQLPage.jsx
+│   └── ReactReduxPage.jsx
+└── data/                    # mavzu ma'lumotlari (yo'nalish bo'yicha papkalar)
+    ├── JavaScript/
+    ├── NodeJS/
+    ├── NestJS/
+    ├── PostgreSQL/
+    └── ReactRedux/
+```
 
-## Expanding the Oxlint configuration
+Har bir `data/<Yo'nalish>/` papkasida `AllData.js` bor — u shu yo'nalishdagi barcha mavzu fayllarini bitta ro'yxatga yig'adi va sahifaga uzatadi. Yangi mavzu qo'shish: mavzu faylini shu papkaga yarating va `AllData.js` ga qo'shing.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## O'zgarishlar tarixi
+
+### 2026-11-17
+- **O'zgardi:** `src/data/Node.js/` papkasi `src/data/NodeJS/` deb qayta nomlandi (nuqtali papka nomi import/yo'l muammolarini keltirib chiqarardi).
+- **O'zgardi:** `AllNodeData.js` → `AllData.js` — barcha yo'nalishlarda (JavaScript, NestJS, PostgreSQL, ReactRedux) bir xil nom.
+- **O'zgardi:** `NodeJsPage.jsx` dagi import yangi yo'lga moslandi.
+- **Tuzatildi:** `nestjsAuthorizationGuideData.js` va `nestjsDatabaseRelationshipsGuideData.js` dagi sintaksis xatolari (matn ichidagi qo'shtirnoqlar escape qilindi) — oldin `npm run build` shu sabab yiqilardi.
+- **Tozalandi:** matnlardagi `[cite: N]` qoldiq belgilari olib tashlandi (NestJS va localStorage mavzulari) — o'qish osonlashdi.
+- **Qo'shildi:** README — loyiha tuzilmasi va ishga tushirish yo'riqnomasi.
+
+### Avval qo'shilganlar (1–10-mavzular)
+- JavaScript: kirish, shartlar, sikllar, massivlar, funksiyalar, DOM, OOP, Map/Set, destructuring, xatolarni boshqarish, localStorage va boshqalar.
+- Node.js: kirish, Express, CRUD, JWT, OTP, MongoDB/Mongoose, validatsiya va xavfsizlik, loyiha tuzilmasi.
+- NestJS: autentifikatsiya, avtorizatsiya, JWT, validatsiya, Swagger, fayl yuklash, PDF, Prisma + PostgreSQL.
+- PostgreSQL: asoslar, constraint va JOIN, ilg'or mavzular.
+- React + Redux: hooks, router, React Query, TypeScript, Redux, i18n, auth tizimi, UI kutubxonalari.

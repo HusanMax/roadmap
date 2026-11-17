@@ -7,17 +7,17 @@ export const nestjsJwtGuideData = {
     {
       type: 'text',
       title: '1. Nima Uchun Login Yetarli Emas?',
-      text: "Oldingi darsda foydalanuvchi Login qildi — parol to'g'ri, server javob berdi[cite: 1]. Lekin keyingi so'rovda server foydalanuvchini tanib olmaydi[cite: 1]. Har bir HTTP request mustaqil, server avvalgi login haqida eslab qolmaydi[cite: 1]. Authentication hali tugamagan — bizga foydalanuvchini eslab qoladigan usul kerak[cite: 1]. Bugungi yechim: JWT[cite: 1]."
+      text: "Oldingi darsda foydalanuvchi Login qildi — parol to'g'ri, server javob berdi. Lekin keyingi so'rovda server foydalanuvchini tanib olmaydi. Har bir HTTP request mustaqil, server avvalgi login haqida eslab qolmaydi. Authentication hali tugamagan — bizga foydalanuvchini eslab qoladigan usul kerak. Bugungi yechim: JWT."
     },
     {
       type: 'text',
       title: '2. JSON Web Token (JWT) Nima?',
-      text: "JWT — server tomonidan yaratiladigan maxsus token bo'lib, foydalanuvchi login qilganini isbotlaydi[cite: 2]. Server parolni har safar so'ramaydi, faqat tokenni tekshiradi[cite: 2]. JWT foydalanuvchining Passport yoki ID kartasi kabi ishlaydi[cite: 2]. Haqiqiy hayotda: Kino → Chipta → Chiptani ko'rsatish → Kirish[cite: 2]. Backend'da: Login → Server → JWT Token → Client → Himoyalangan Sahifalar[cite: 2]."
+      text: "JWT — server tomonidan yaratiladigan maxsus token bo'lib, foydalanuvchi login qilganini isbotlaydi. Server parolni har safar so'ramaydi, faqat tokenni tekshiradi. JWT foydalanuvchining Passport yoki ID kartasi kabi ishlaydi. Haqiqiy hayotda: Kino → Chipta → Chiptani ko'rsatish → Kirish. Backend'da: Login → Server → JWT Token → Client → Himoyalangan Sahifalar."
     },
     {
       type: 'code',
       title: '3. JWT Tuzilishi (Structure)',
-      text: "Har bir JWT uch qismdan iborat: Header, Payload va Signature[cite: 3]. Hech qachon parolni Payload ichida saqlamang — faqat xavfsiz ma'lumot (masalan, id va email) joylashtiring[cite: 3].",
+      text: "Har bir JWT uch qismdan iborat: Header, Payload va Signature. Hech qachon parolni Payload ichida saqlamang — faqat xavfsiz ma'lumot (masalan, id va email) joylashtiring.",
       code: `// 1. Header — Algoritm ma'lumoti
 {
   "alg": "HS256",
@@ -36,7 +36,7 @@ export const nestjsJwtGuideData = {
     {
       type: 'code',
       title: '4. JwtModule ni Sozlash',
-      text: "Kutubxonani o'rnatish, Auth modulini yaratish va JwtModule ni ro'yxatdan o'tkazish[cite: 4]. Secret Key ni .env faylida saqlang va hech qachon GitHub ga yuklamang[cite: 4].",
+      text: "Kutubxonani o'rnatish, Auth modulini yaratish va JwtModule ni ro'yxatdan o'tkazish. Secret Key ni .env faylida saqlang va hech qachon GitHub ga yuklamang.",
       code: `// Terminal buyruqlari:
 // npm install @nestjs/jwt
 // nest g module auth
@@ -66,7 +66,7 @@ export class AuthModule {}
     {
       type: 'code',
       title: '5. AuthService — Token Yaratish: sign()',
-      text: "sign() metodi JWT yaratadi va Payload ichiga foydalanuvchi ma'lumotini saqlaydi[cite: 5].",
+      text: "sign() metodi JWT yaratadi va Payload ichiga foydalanuvchi ma'lumotini saqlaydi.",
       code: `// Terminal: nest g service auth
 
 // auth.service.ts
@@ -91,7 +91,7 @@ export class AuthService {
     {
       type: 'code',
       title: '6. UserModule va UserService ga JWT ni Ulash',
-      text: "UserModule ichiga AuthModule ni import qilamiz va login metodida token generatsiya qilib, parolsiz user ma'lumotlari bilan qaytaramiz[cite: 6, 7].",
+      text: "UserModule ichiga AuthModule ni import qilamiz va login metodida token generatsiya qilib, parolsiz user ma'lumotlari bilan qaytaramiz.",
       code: `// user.module.ts
 @Module({
   imports: [PrismaModule, AuthModule], // <- AuthModule qo'shamiz
@@ -128,12 +128,12 @@ export class UserService {
     {
       type: 'text',
       title: "7. Tokenni O'qish: JWT.io va Authorization Header",
-      text: "jwt.io saytida tokenni Paste qilsangiz, ichidagi ma'lumotni (iat — Issued At: token yaratilgan vaqt; exp — Expiration Time: muddati tugash vaqti) ko'rishingiz mumkin[cite: 8]. JWT decode qilish mumkin, lekin u shifrlangan emas — shuning uchun parolni Payload ga qo'ymang[cite: 8]! Frontend login qilgandan keyin tokenni saqlaydi (masalan, localStorage) va har bir so'rovda Authorization Header orqali 'Bearer eyJhbGc...' ko'rinishida yuboradi[cite: 9]. 'Bearer' so'zi 'Men bu tokenni olib yuribman' degan ma'noni bildiradi[cite: 9]."
+      text: "jwt.io saytida tokenni Paste qilsangiz, ichidagi ma'lumotni (iat — Issued At: token yaratilgan vaqt; exp — Expiration Time: muddati tugash vaqti) ko'rishingiz mumkin. JWT decode qilish mumkin, lekin u shifrlangan emas — shuning uchun parolni Payload ga qo'ymang! Frontend login qilgandan keyin tokenni saqlaydi (masalan, localStorage) va har bir so'rovda Authorization Header orqali 'Bearer eyJhbGc...' ko'rinishida yuboradi. 'Bearer' so'zi 'Men bu tokenni olib yuribman' degan ma'noni bildiradi."
     },
     {
       type: 'code',
       title: "8. JwtAuthGuard — Route'larni Himoya Qilish",
-      text: "JWT faqat token — uni tekshiradigan mexanizm Guard[cite: 10]. Guard bo'lmasa, hamma API ga kirish imkoniyatiga ega bo'ladi[cite: 10].",
+      text: "JWT faqat token — uni tekshiradigan mexanizm Guard. Guard bo'lmasa, hamma API ga kirish imkoniyatiga ega bo'ladi.",
       code: `// Terminal: nest g guard auth/jwt-auth
 
 // jwt-auth.guard.ts
@@ -184,39 +184,39 @@ export class ProductsController {
     {
       type: 'text',
       title: '9. Guard Ichki Ishlash Mexanizmi',
-      text: "Guard 4 bosqichda ishlaydi: 1) Header o'qish (request.headers.authorization)[cite: 12]; 2) Bearer ajratish (authHeader.split(' ')[1] orqali 'Bearer' so'zini olib tashlash)[cite: 12]; 3) verify() tekshiruvi (Secret Key mosligi, Signature to'g'riligi va token muddati tugamaganligini tekshirish)[cite: 12]; 4) Hammasi to'g'ri bo'lsa Controller ishga tushadi, aks holda 401 Unauthorized xatosi qaytadi[cite: 12]."
+      text: "Guard 4 bosqichda ishlaydi: 1) Header o'qish (request.headers.authorization); 2) Bearer ajratish (authHeader.split(' ')[1] orqali 'Bearer' so'zini olib tashlash); 3) verify() tekshiruvi (Secret Key mosligi, Signature to'g'riligi va token muddati tugamaganligini tekshirish); 4) Hammasi to'g'ri bo'lsa Controller ishga tushadi, aks holda 401 Unauthorized xatosi qaytadi."
     },
     {
       type: 'comparison',
       title: "10. To'liq JWT Authentication Jarayoni va Xulosalar",
-      text: "Boshidan oxirigacha autentifikatsiya oqimi va asosiy xulosalar[cite: 13].",
+      text: "Boshidan oxirigacha autentifikatsiya oqimi va asosiy xulosalar.",
       cards: [
         {
           title: '1–2. Register va Login',
           subtitle: 'Hash → Database → bcrypt.compare()',
-          desc: "Ro'yxatdan o'tishda parol hashlanadi, loginda esa bcrypt.compare() bilan tekshiriladi[cite: 13]."
+          desc: "Ro'yxatdan o'tishda parol hashlanadi, loginda esa bcrypt.compare() bilan tekshiriladi."
         },
         {
           title: '3. Token Yaratish',
           subtitle: 'JWT Yaratiladi → Client Saqlaydi',
-          desc: "sign() metodi orqali token yaratiladi va mijoz (browser) uni saqlab oladi[cite: 5, 9, 13]."
+          desc: "sign() metodi orqali token yaratiladi va mijoz (browser) uni saqlab oladi."
         },
         {
           title: '4. Himoyalangan So\'rov',
           subtitle: 'Authorization Header → Guard → verify()',
-          desc: "Har bir so'rovda Bearer token yuboriladi va Guard verify() orqali tekshiradi[cite: 9, 12, 13]."
+          desc: "Har bir so'rovda Bearer token yuboriladi va Guard verify() orqali tekshiradi."
         },
         {
           title: '5. Natija',
           subtitle: 'Controller → Javob (yoki 401)',
-          desc: "Token yaroqli bo'lsa Controller ma'lumot qaytaradi, aks holda kirish rad etiladi[cite: 10, 12, 13]."
+          desc: "Token yaroqli bo'lsa Controller ma'lumot qaytaradi, aks holda kirish rad etiladi."
         }
       ],
       actionsTitle: 'Asosiy Xulosalar va Keyingi Dars:',
       actions: [
-        "JWT login qilgan foydalanuvchini eslab qoladi; sign() token yaratadi, verify() tekshiradi[cite: 13].",
-        "Guard route'larni himoya qiladi; bcrypt parolni tekshiradi, JWT esa foydalanuvchini aniqlaydi[cite: 13].",
-        "Keyingi dars: Role-Based Authorization — Admin va User rollari, custom decorator va role asosida ruxsat berish yoki rad etish[cite: 13]."
+        "JWT login qilgan foydalanuvchini eslab qoladi; sign() token yaratadi, verify() tekshiradi.",
+        "Guard route'larni himoya qiladi; bcrypt parolni tekshiradi, JWT esa foydalanuvchini aniqlaydi.",
+        "Keyingi dars: Role-Based Authorization — Admin va User rollari, custom decorator va role asosida ruxsat berish yoki rad etish."
       ]
     }
   ]

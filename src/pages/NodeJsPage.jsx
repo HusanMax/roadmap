@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { nodeAllModules } from '../data/Node.js/AllNodeData';
+import { nodeAllModules } from '../data/NodeJS/AllData';
 import TopicTemplate from '../components/TopicTemplate';
 
 export default function NodeJsPage({ onBack }) {
