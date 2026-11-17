@@ -77,6 +77,12 @@ footer  { grid-area: footer; }`
 }`
     },
     {
+      type: 'visual',
+      visual: 'grid',
+      title: "Grid — jonli namuna",
+      text: "Ustunlar soni va gap ni o'zgartiring, katakni cho'zib ko'ring."
+    },
+    {
       type: 'tasks',
       title: 'Amaliyot mashqlari',
       tasks: [
