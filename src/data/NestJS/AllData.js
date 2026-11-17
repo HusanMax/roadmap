@@ -3,6 +3,7 @@ import { nestjsPostgresPrismaGuideData } from './nestjsPostgresPrismaGuideData';
 import { nestjsValidationGuideData } from './nestjsValidationGuideData';
 import { nestjsAuthenticationGuideData } from './nestjsAuthenticationGuideData';
 import { nestjsJwtGuideData } from './nestjsJwtGuideData';
+import { nestjsAuthorizationGuideData } from './nestjsAuthorizationGuideData';
 
 
 export const nestAllModules = [
@@ -11,4 +12,5 @@ export const nestAllModules = [
   nestjsValidationGuideData,
   nestjsAuthenticationGuideData,
   nestjsJwtGuideData,
+  nestjsAuthorizationGuideData,
 ];
