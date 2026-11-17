@@ -78,6 +78,32 @@ export const twResponsiveStatesData = {
 </div>`
     },
     {
+      type: 'challenge',
+      lang: 'html',
+      title: 'Mini vazifa: moslashuvchan kartochkalar',
+      story: "Mahsulotlar ro'yxati telefonda 1 ustunda, planshetda (md) 2 ustunda, kompyuterda (lg) 4 ustunda ko'rinishi kerak.",
+      task: 'Grid konteyneriga grid, grid-cols-1, md:grid-cols-2, lg:grid-cols-4 va gap-4 class larini bering.',
+      starter: `<div class="">
+  <div class="bg-sky-100 p-4">1</div>
+  <div class="bg-sky-100 p-4">2</div>
+  <div class="bg-sky-100 p-4">3</div>
+  <div class="bg-sky-100 p-4">4</div>
+</div>`,
+      tests: [
+        { name: 'grid', expr: "getComputedStyle(document.querySelector('div')).display === 'grid'" },
+        { name: 'md:grid-cols-2 yozilgan', expr: "document.querySelector('div').classList.contains('md:grid-cols-2')" },
+        { name: 'lg:grid-cols-4 yozilgan', expr: "document.querySelector('div').classList.contains('lg:grid-cols-4')" },
+        { name: 'gap-4 (16px)', expr: "getComputedStyle(document.querySelector('div')).rowGap === '16px'" }
+      ],
+      hint: 'class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"',
+      solution: `<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+  <div class="bg-sky-100 p-4">1</div>
+  <div class="bg-sky-100 p-4">2</div>
+  <div class="bg-sky-100 p-4">3</div>
+  <div class="bg-sky-100 p-4">4</div>
+</div>`
+    },
+    {
       type: 'tasks',
       title: 'Amaliyot mashqlari',
       tasks: [
