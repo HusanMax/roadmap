@@ -89,6 +89,12 @@ export const flexboxData = {
 }`
     },
     {
+      type: 'visual',
+      visual: 'flexbox',
+      title: "Flexbox o'yinchog'i",
+      text: "Xususiyatlarni o'zgartiring va elementlar qanday joylashishini jonli kuzating."
+    },
+    {
       type: 'tasks',
       title: 'Amaliyot mashqlari',
       tasks: [
